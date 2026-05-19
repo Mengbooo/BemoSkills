@@ -1,0 +1,25 @@
+[
+  {
+    "id": "paper-breath-editorial-slides",
+    "title": "Paper Breath Editorial Slides",
+    "title_zh": "纸面呼吸感叙事课件",
+    "status": "archived",
+    "category": [
+      "visual-storytelling",
+      "slides",
+      "courseware"
+    ],
+    "keywords": [
+      "paper grain",
+      "mist nodes",
+      "quiet editorial",
+      "soft anchors",
+      "low saturation"
+    ],
+    "path": "skills/visual-storytelling/paper-breath-editorial-slides",
+    "examples": [
+      "skills/visual-storytelling/paper-breath-editorial-slides/examples/yang-guifei-and-lychee/index.html"
+    ]
+  }
+]
+

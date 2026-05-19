@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>杨贵妃与荔枝</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper:#f3eee5;
+      --paper-warm:#efe7db;
+      --paper-deep:#e4d9ca;
+      --ink:#34281f;
+      --ink-soft:#655447;
+      --ink-faint:#8c7b6d;
+      --line:rgba(75,58,45,.18);
+      --line-strong:rgba(75,58,45,.34);
+      --shadow:rgba(51,35,25,.08);
+      --berry-core:160,70,69;
+      --berry-fog:206,130,119;
+      --berry-deep:#6f3738;
+      --leaf-core:102,115,74;
+      --leaf-fog:164,171,130;
+      --gold-core:176,133,88;
+      --rose-dust:#b47c72;
+      --mono:"IBM Plex Mono", monospace;
+      --serif:"Noto Serif SC", serif;
+      --sans:"Noto Sans SC", sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--paper);color:var(--ink)}
+    body{
+      font-family:var(--sans);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(255,255,255,.62), transparent 32%),
+        radial-gradient(circle at 84% 80%, rgba(230,218,204,.55), transparent 28%),
+        linear-gradient(180deg, var(--paper) 0%, #f6f1e8 48%, #f0e9de 100%);
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:2;
+      opacity:.42;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(70,55,41,.05) 0 0.8px, transparent 1px) 0 0/13px 13px,
+        radial-gradient(circle at 60% 72%, rgba(255,255,255,.32) 0 1px, transparent 1.2px) 0 0/17px 17px,
+        repeating-linear-gradient(98deg, rgba(91,76,61,.03) 0 1px, transparent 1px 11px);
+      mix-blend-mode:multiply;
+    }
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:3;
+      background:
+        radial-gradient(circle at center, transparent 48%, rgba(55,40,28,.04) 100%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.015));
+    }
+
+    #deck{
+      width:1200vw;
+      height:100vh;
+      display:flex;
+      flex-wrap:nowrap;
+      transition:transform .8s cubic-bezier(.75,0,.2,1);
+      will-change:transform;
+      position:relative;
+      z-index:5;
+    }
+
+    .slide{
+      width:100vw;
+      height:100vh;
+      flex:0 0 100vw;
+      position:relative;
+      overflow:hidden;
+      padding:5.6vh 5vw 7.2vh;
+      background:
+        radial-gradient(circle at 22% 18%, rgba(255,255,255,.62), transparent 28%),
+        radial-gradient(circle at 78% 76%, rgba(228,214,197,.44), transparent 30%);
+    }
+
+    .slide.dusk{
+      background:
+        radial-gradient(circle at 24% 16%, rgba(120,89,72,.22), transparent 28%),
+        radial-gradient(circle at 84% 76%, rgba(229,211,191,.12), transparent 26%),
+        linear-gradient(180deg, #403127 0%, #31261f 100%);
+      color:#efe7dc;
+    }
+    .slide.dusk .meta,
+    .slide.dusk .page-foot,
+    .slide.dusk .small-note,
+    .slide.dusk .side-note,
+    .slide.dusk .label,
+    .slide.dusk .caption{color:rgba(239,231,220,.68)}
+    .slide.dusk .rule,
+    .slide.dusk .mini-card,
+    .slide.dusk .row,
+    .slide.dusk .quote-box,
+    .slide.dusk .tall-card{border-color:rgba(239,231,220,.16)}
+    .slide.dusk .title,
+    .slide.dusk .big-statement,
+    .slide.dusk .key-num{color:#f6efe6}
+    .slide.dusk .body-text{color:rgba(246,239,230,.84)}
+
+    .meta{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      font-family:var(--mono);
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--ink-faint);
+      position:relative;
+      z-index:8;
+    }
+    .meta .left,
+    .meta .right{
+      display:flex;
+      gap:1.2rem;
+      align-items:center;
+    }
+    .rule{
+      width:2.4rem;
+      height:1px;
+      background:currentColor;
+      opacity:.35;
+    }
+    .page-foot{
+      position:absolute;
+      left:5vw;
+      right:5vw;
+      bottom:3vh;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      font-family:var(--mono);
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--ink-faint);
+      z-index:8;
+    }
+    .page-foot .title-note{
+      font-family:var(--serif);
+      letter-spacing:.04em;
+      text-transform:none;
+      font-size:13px;
+      color:var(--ink-soft);
+    }
+
+    .content{
+      position:relative;
+      z-index:7;
+      height:calc(100% - 7.5rem);
+      padding-top:5vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      gap:2.6vh;
+    }
+
+    .kicker{
+      font-family:var(--mono);
+      font-size:11px;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+      color:var(--ink-faint);
+    }
+    .title{
+      font-family:var(--serif);
+      font-size:clamp(40px, 5.2vw, 88px);
+      line-height:1.07;
+      letter-spacing:-.03em;
+      font-weight:600;
+      margin:0;
+      max-width:11ch;
+      color:var(--ink);
+    }
+    .subtitle{
+      font-family:var(--serif);
+      font-weight:400;
+      font-size:clamp(18px, 1.7vw, 31px);
+      line-height:1.52;
+      max-width:28ch;
+      color:var(--ink-soft);
+      margin:0;
+    }
+    .body-text{
+      font-size:clamp(15px, 1.08vw, 19px);
+      line-height:1.92;
+      max-width:56ch;
+      color:#59493d;
+      margin:0;
+    }
+    .small-note,
+    .caption{
+      font-size:12px;
+      line-height:1.8;
+      color:var(--ink-faint);
+      font-family:var(--mono);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .body-text em,
+    .subtitle em{
+      font-style:normal;
+      color:var(--berry-deep);
+    }
+
+    .side-note{
+      position:absolute;
+      top:11.5vh;
+      right:3.6vw;
+      writing-mode:vertical-rl;
+      text-orientation:mixed;
+      font-family:var(--mono);
+      font-size:11px;
+      letter-spacing:.34em;
+      color:var(--ink-faint);
+      z-index:8;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:1.6vw;
+      margin-top:2vh;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:2vw;
+      align-items:start;
+    }
+    .grid-4{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:1.8vw 2.2vw;
+      margin-top:1.4vh;
+    }
+
+    .mini-card,
+    .tall-card,
+    .row,
+    .quote-box{
+      border-top:1px solid var(--line);
+      padding-top:1.4vh;
+    }
+
+    .mini-card{
+      min-height:20vh;
+      padding-right:1vw;
+    }
+    .mini-card .label,
+    .tall-card .label,
+    .row .label{
+      font-family:var(--mono);
+      font-size:10px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:var(--ink-faint);
+      margin-bottom:1.2vh;
+    }
+    .mini-card h3,
+    .tall-card h3{
+      font-family:var(--serif);
+      font-size:clamp(22px, 1.85vw, 34px);
+      line-height:1.25;
+      font-weight:600;
+      margin:0 0 .8vh;
+      color:inherit;
+    }
+    .mini-card p,
+    .tall-card p,
+    .row p{
+      margin:0;
+      font-size:clamp(14px, .98vw, 18px);
+      line-height:1.8;
+      color:inherit;
+      opacity:.86;
+    }
+
+    .timeline{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:2vw;
+      margin-top:2vh;
+      align-items:end;
+    }
+    .time-card{
+      padding-top:1.6vh;
+      border-top:1px solid currentColor;
+      border-color:rgba(255,255,255,.2);
+      min-height:31vh;
+    }
+    .time-card .year{
+      font-family:var(--serif);
+      font-size:clamp(42px, 4.7vw, 84px);
+      line-height:.95;
+      letter-spacing:-.04em;
+      color:inherit;
+      margin-bottom:1.2vh;
+    }
+    .time-card .desc{
+      font-size:clamp(15px, 1.02vw, 18px);
+      line-height:1.9;
+      opacity:.84;
+      max-width:22ch;
+    }
+
+    .key-num{
+      font-family:var(--serif);
+      font-size:clamp(42px, 4.5vw, 76px);
+      line-height:.95;
+      letter-spacing:-.04em;
+      margin:0 0 .4vh;
+      color:var(--ink);
+    }
+
+    .path{
+      display:grid;
+      grid-template-columns:repeat(5, minmax(0,1fr));
+      gap:1.2vw;
+      margin-top:2vh;
+    }
+    .path-step{
+      border-top:1px solid var(--line);
+      padding-top:1.3vh;
+      min-height:25vh;
+      position:relative;
+    }
+    .path-step .step-no{
+      font-family:var(--mono);
+      font-size:10px;
+      letter-spacing:.26em;
+      color:var(--ink-faint);
+      text-transform:uppercase;
+      margin-bottom:1.2vh;
+    }
+    .path-step h4{
+      font-family:var(--serif);
+      font-weight:600;
+      font-size:clamp(20px, 1.6vw, 30px);
+      margin:0 0 .6vh;
+      line-height:1.3;
+    }
+    .path-step p{
+      margin:0;
+      font-size:clamp(14px, .95vw, 17px);
+      line-height:1.82;
+      color:var(--ink-soft);
+    }
+
+    .big-statement{
+      font-family:var(--serif);
+      font-size:clamp(44px, 5.5vw, 94px);
+      line-height:1.08;
+      letter-spacing:-.03em;
+      font-weight:600;
+      margin:0;
+      max-width:12ch;
+    }
+    .quote-box{
+      max-width:46ch;
+      padding-left:1.2vw;
+      border-left:1px solid currentColor;
+      border-top:none;
+      color:inherit;
+    }
+    .quote-box p{
+      margin:0;
+      font-family:var(--serif);
+      font-size:clamp(18px, 1.56vw, 28px);
+      line-height:1.66;
+    }
+
+    .compare{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:2.6vw;
+      margin-top:2vh;
+      align-items:start;
+    }
+    .compare .panel{
+      border-top:1px solid var(--line);
+      padding-top:1.5vh;
+      min-height:34vh;
+    }
+    .compare .panel h3{
+      margin:0 0 1vh;
+      font-family:var(--serif);
+      font-size:clamp(24px, 1.9vw, 34px);
+      font-weight:600;
+    }
+    .compare .panel ul{
+      margin:0;
+      padding-left:1.05rem;
+      color:inherit;
+    }
+    .compare .panel li{
+      margin:.4rem 0;
+      line-height:1.85;
+      font-size:clamp(14px, .98vw, 18px);
+      opacity:.86;
+    }
+
+    .row-stack{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:1.2vh;
+      margin-top:1.4vh;
+      max-width:68vw;
+    }
+    .row{
+      display:grid;
+      grid-template-columns:2fr 5fr 1fr;
+      gap:1vw;
+      align-items:start;
+      padding-bottom:.6vh;
+    }
+    .row .term{
+      font-family:var(--serif);
+      font-size:clamp(20px, 1.45vw, 28px);
+      line-height:1.4;
+    }
+    .row .mark{
+      justify-self:end;
+      font-family:var(--mono);
+      font-size:10px;
+      letter-spacing:.18em;
+      color:var(--ink-faint);
+      text-transform:uppercase;
+      padding-top:.5vh;
+    }
+
+    .hero-end{
+      display:grid;
+      gap:3vh;
+      align-content:center;
+      min-height:74vh;
+    }
+
+    .orb{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(2px);
+      pointer-events:none;
+      z-index:4;
+      opacity:.92;
+    }
+    .orb::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:50%;
+      background:
+        radial-gradient(circle at 42% 36%, rgba(255,255,255,.18) 0 7%, transparent 25%),
+        radial-gradient(circle at 48% 48%, rgba(var(--core),.74) 0 18%, rgba(var(--fog),.42) 34%, rgba(var(--fog),.16) 58%, transparent 76%);
+    }
+    .orb::after{
+      content:"";
+      position:absolute;
+      width:14%;
+      height:14%;
+      border-radius:50%;
+      background:rgba(45,31,23,.66);
+      top:38%;
+      left:62%;
+      box-shadow:0 0 0 8px rgba(45,31,23,.03);
+    }
+    .orb.berry{--core:var(--berry-core);--fog:var(--berry-fog)}
+    .orb.leaf{--core:var(--leaf-core);--fog:var(--leaf-fog)}
+    .orb.gold{--core:var(--gold-core);--fog:225,196,161}
+    .orb .pin{
+      position:absolute;
+      right:12%;
+      bottom:10%;
+      font-family:var(--mono);
+      font-size:10px;
+      letter-spacing:.16em;
+      color:rgba(40,30,24,.82);
+      text-transform:uppercase;
+      background:rgba(244,238,229,.54);
+      border:1px solid rgba(62,47,36,.1);
+      padding:.28rem .46rem;
+      border-radius:999px;
+      filter:none;
+    }
+    .slide.dusk .orb .pin{
+      background:rgba(247,239,228,.14);
+      color:rgba(247,239,228,.82);
+      border-color:rgba(247,239,228,.08);
+    }
+
+    #nav{
+      position:fixed;
+      left:50%;
+      bottom:1.7vh;
+      transform:translateX(-50%);
+      z-index:10;
+      display:flex;
+      gap:10px;
+      padding:.55rem .8rem;
+      border-radius:999px;
+      background:rgba(243,238,229,.62);
+      border:1px solid rgba(73,58,45,.08);
+      backdrop-filter:blur(10px);
+    }
+    #nav button{
+      width:8px;
+      height:8px;
+      border:none;
+      border-radius:999px;
+      background:rgba(92,73,60,.28);
+      padding:0;
+      cursor:pointer;
+      transition:all .25s ease;
+    }
+    #nav button.active{
+      width:24px;
+      background:rgba(92,73,60,.86);
+    }
+
+    #hint{
+      position:fixed;
+      right:2.4vw;
+      bottom:2.15vh;
+      z-index:10;
+      font-family:var(--mono);
+      font-size:10px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:rgba(92,73,60,.54);
+    }
+
+    @media (max-width: 960px){
+      .slide{padding:4.6vh 6vw 8vh}
+      .side-note{display:none}
+      .grid-3,.grid-4,.grid-2,.path,.compare,.timeline{grid-template-columns:1fr}
+      .row{grid-template-columns:1fr}
+      .row .mark{justify-self:start}
+      .page-foot{font-size:10px}
+      #hint{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div id="deck">
+    <section class="slide">
+      <div class="meta">
+        <div class="left"><span>Tang Memory</span><span class="rule"></span><span>courseware</span></div>
+        <div class="right"><span>01 / 12</span></div>
+      </div>
+      <div class="side-note">楊貴妃　荔枝　長安　記憶</div>
+      <div class="orb berry" style="width:18vw;height:18vw;top:13vh;left:66vw;"><span class="pin">荔枝</span></div>
+      <div class="orb leaf" style="width:12vw;height:12vw;top:24vh;left:77vw;"><span class="pin">葉脈</span></div>
+      <div class="orb gold" style="width:10vw;height:10vw;top:62vh;left:17vw;"><span class="pin">華清宮</span></div>
+      <div class="content hero-end">
+        <div class="kicker">a quiet historical deck</div>
+        <h1 class="title">杨贵妃 与 荔枝</h1>
+        <p class="subtitle">一颗鲜果，如何把甜味、速度、欲望与后世记忆一起写进纸上。</p>
+        <p class="small-note">for ppt / courseware / editorial study · 2026.05</p>
+      </div>
+      <div class="page-foot">
+        <div class="title-note">少量颜色在白纸上发光</div>
+        <div>cover</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="meta">
+        <div class="left"><span>Act I</span><span class="rule"></span><span>what this story is</span></div>
+        <div class="right"><span>02 / 12</span></div>
+      </div>
+      <div class="side-note">不是甜點故事</div>
+      <div class="orb berry" style="width:14vw;height:14vw;top:18vh;left:73vw;"><span class="pin">01</span></div>
+      <div class="orb leaf" style="width:9vw;height:9vw;top:58vh;left:81vw;"><span class="pin">02</span></div>
+      <div class="content">
+        <div class="kicker">opening premise</div>
+        <h2 class="big-statement">这不是一则宫廷甜点故事。</h2>
+        <p class="body-text">它真正关心的，是谁有资格要求<em>新鲜</em>，谁必须替这种新鲜奔跑，以及谁在很多年后，把这一切压缩成一句更轻、更快、更好记的诗。</p>
+        <div class="grid-3">
+          <div class="mini-card">
+            <div class="label">focus 01</div>
+            <h3>权力</h3>
+            <p>一颗果子能被送进宫，不只是因为它甜，而是因为有人可以命令距离为自己缩短。</p>
+          </div>
+          <div class="mini-card">
+            <div class="label">focus 02</div>
+            <h3>速度</h3>
+            <p>荔枝离枝即走向衰败，所以它在北方宫廷里首先是一种时效问题。</p>
+          </div>
+          <div class="mini-card">
+            <div class="label">focus 03</div>
+            <h3>记忆</h3>
+            <p>后来人记住的不是驿站和劳作，而是一笑、一骑、一片红尘。</p>
+          </div>
+        </div>
+      </div>
+      <div class="page-foot">
+        <div class="title-note">甜味背后，首先是结构</div>
+        <div>framing</div>
+      </div>
+    </section>
+
+    <section class="slide dusk">
+      <div class="meta">
+        <div class="left"><span>Yang Yuhuan</span><span class="rule"></span><span>timeline</span></div>
+        <div class="right"><span>03 / 12</span></div>
+      </div>
+      <div class="side-note">719　745　756</div>
+      <div class="orb berry" style="width:22vw;height:22vw;top:10vh;left:72vw;"><span class="pin">745</span></div>
+      <div class="orb gold" style="width:13vw;height:13vw;top:62vh;left:70vw;"><span class="pin">756</span></div>
+      <div class="content">
+        <div class="kicker">person before symbol</div>
+        <h2 class="title" style="max-width:10ch;color:#f4ece1;">先有杨玉环，后有传说中的“妃子笑”。</h2>
+        <div class="timeline">
+          <div class="time-card">
+            <div class="year">719</div>
+            <div class="desc">杨玉环出生。后世关于她的记忆，常常把一个人简化成一个美名和一段轶事。</div>
+          </div>
+          <div class="time-card">
+            <div class="year">745</div>
+            <div class="desc">被册为贵妃。宫廷宠爱从个人情感，慢慢延伸成更大的礼制、供奉与家族抬升。</div>
+          </div>
+          <div class="time-card">
+            <div class="year">756</div>
+            <div class="desc">安史之乱中，马嵬坡事变发生。她从被凝视的中心，变成帝国失序时被追责的对象。</div>
+          </div>
+        </div>
+        <p class="caption">date spine based on commonly used modern chronology and traditional texts</p>
+      </div>
+      <div class="page-foot">
+        <div class="title-note">人物不是插图，她先经历了时间</div>
+        <div>timeline</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="meta">
+        <div class="left"><span>Lychee</span><span class="rule"></span><span>object reading</span></div>
+        <div class="right"><span>04 / 12</span></div>
+      </div>
+      <div class="side-note">果實　時效　香氣　稀有</div>
+      <div class="orb berry" style="width:12vw;height:12vw;top:16vh;left:80vw;"><span class="pin">香</span></div>
+      <div class="orb leaf" style="width:9vw;height:9vw;top:64vh;left:16vw;"><span class="pin">枝</span></div>
+      <div class="content">
+        <div class="kicker">why lychee</div>
+        <h2 class="title" style="max-width:12ch;">一颗荔枝，为什么值得让许多人奔跑。</h2>
+        <p class="body-text">因为它太容易失去自己。颜色会暗，果肉会疲，香气会散。对于远离产地的北方宫廷来说，<em>鲜荔枝</em>不是普通水果，而是一种必须和时间赛跑的稀有状态。</p>
+        <div class="grid-4">
+          <div class="mini-card">
+            <div class="label">trait 01</div>
+            <div class="key-num">鲜</div>
+            <p>它的价值和“刚离枝不久”紧紧绑在一起。</p>
+          </div>
+          <div class="mini-card">
+            <div class="label">trait 02</div>
+            <div class="key-num">远</div>
+            <p>唐代宫廷中心在长安，而鲜荔枝主要来自更南、更湿、更热的区域。</p>
+          </div>
+          <div class="mini-card">
+            <div class="label">trait 03</div>
+            <div class="key-num">小</div>
+            <p>它体积不大，却能成为宠爱被看见的证据，因此更锋利。</p>
+          </div>
+          <div class="mini-card">
+            <div class="label">trait 04</div>
+            <div class="key-num">快</div>
+            <p>越难保存，越需要速度；越依赖速度，越显露权力。</p>
+          </div>
+        </div>
+      </div>
+      <div class="page-foot">
+        <div class="title-note">稀有，不只是数量少，而是保鲜难</div>
+        <div>object</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="meta">
+        <div class="left"><span>Relay Network</span><span class="rule"></span><span>distance</span></div>
+        <div class="right"><span>05 / 12</span></div>
+      </div>
+      <div class="side-note">南方　驛傳　長安</div>
+      <div class="orb gold" style="width:14vw;height:14vw;top:18vh;left:75vw;"><span class="pin">數千里</span></div>
+      <div class="orb berry" style="width:10vw;height:10vw;top:64vh;left:72vw;"><span class="pin">到京</span></div>
+      <div class="content">
+        <div class="kicker">how it moved</div>
+        <h2 class="title" style="max-width:11ch;">从南方到长安，它靠的不是浪漫，而是网络。</h2>
+        <p class="body-text">《新唐书》写到杨贵妃喜食鲜荔枝，驿骑要“走数千里”。我们未必能替每一颗果子画出唯一准确路线，但可以确定：鲜味被送达，意味着一整套传递系统被短暂点亮。</p>
+        <div class="path">
+          <div class="path-step">
+            <div class="step-no">01</div>
+            <h4>采摘</h4>
+            <p>先抓住短暂成熟期，决定哪些果子配得上向北出发。</p>
+          </div>
+          <div class="path-step">
+            <div class="step-no">02</div>
+            <h4>封护</h4>
+            <p>为保住汁水与香气，外层必须尽可能减少损耗与拖延。</p>
+          </div>
+          <div class="path-step">
+            <div class="step-no">03</div>
+            <h4>驰递</h4>
+            <p>路途不是一匹马完成，而是接续、换乘、不断向前的制度动作。</p>
+          </div>
+          <div class="path-step">
+            <div class="step-no">04</div>
+            <h4>验收</h4>
+            <p>抵达时最重要的判断标准只有一个：它还像不像刚摘下来的样子。</p>
+          </div>
+          <div class="path-step">
+            <div class="step-no">05</div>
+            <h4>呈进</h4>
+            <p>一旦成功入宫，整条路上的劳作就会被压缩成“她吃到了”。</p>
+          </div>
+        </div>
+      </div>
+      <div class="page-foot">
+        <div class="title-note">一条路被甜味短暂照亮</div>
+        <div>network</div>
+      </div>
+    </section>
+
+    <section class="slide dusk">
+      <div class="meta">
+        <div class="left"><span>Du Mu</span><span class="rule"></span><span>compressed memory</span></div>
+        <div class="right"><span>06 / 12</span></div>
+      </div>
+      <div class="side-note">一騎紅塵　妃子笑</div>
+      <div class="orb berry" style="width:24vw;height:24vw;top:14vh;left:70vw;"><span class="pin">晚唐</span></div>
+      <div class="content hero-end">
+        <div class="kicker" style="color:rgba(239,231,220,.6);">poem as camera</div>
+        <h2 class="big-statement" style="max-width:10ch;">一骑红尘妃子笑。<br>无人知是荔枝来。</h2>
+        <div class="quote-box">
+          <p>杜牧把许多站点、马匹、季节、等待、折损与劳作，剪成一个瞬间。历史因此变轻，也因此变得更耐记。</p>
+        </div>
+      </div>
+      <div class="page-foot">
+        <div class="title-note">诗把长路缩成一笑</div>
+        <div>poem</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="meta">
+        <div class="left"><span>Memory vs History</span><span class="rule"></span><span>reading carefully</span></div>
+        <div class="right"><span>07 / 12</span></div>
+      </div>
+      <div class="side-note">詩更快　史更黏稠</div>
+      <div class="orb leaf" style="width:13vw;height:13vw;top:16vh;left:78vw;"><span class="pin">辨</span></div>
+      <div class="content">
+        <div class="kicker">a useful caution</div>
+        <h2 class="title" style="max-width:10ch;">诗比史更快，所以也更容易胜出。</h2>
+        <div class="compare">
+          <div class="panel">
+            <h3>文学记忆</h3>
+            <ul>
+              <li>一切都集中在“红尘”与“妃子笑”的戏剧瞬间。</li>
+              <li>果子像暗号，证明宠爱已被看见。</li>
+              <li>读者记住的是画面，而不是机制。</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>历史细部</h3>
+            <ul>
+              <li>鲜荔枝具体由何地贡进、经何路线，后世并非没有争论。</li>
+              <li>传递系统的成本与劳动，在诗里几乎全部失声。</li>
+              <li>但正因为诗太成功，这则故事才一直被保存下来。</li>
+            </ul>
+          </div>
+        </div>
+        <p class="caption">the point is not to cancel the poem, but to hear what it silences</p>
+      </div>
+      <div class="page-foot">
+        <div class="title-note">保留审美，也保留怀疑</div>
+        <div>method</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="meta">
+        <div class="left"><span>Changhenge</span><span class="rule"></span><span>structure of favor</span></div>
+        <div class="right"><span>08 / 12</span></div>
+      </div>
+      <div class="side-note">寵愛　不只是一人</div>
+      <div class="orb gold" style="width:13vw;height:13vw;top:18vh;left:78vw;"><span class="pin">列土</span></div>
+      <div class="orb berry" style="width:10vw;height:10vw;top:65vh;left:20vw;"><span class="pin">門戶</span></div>
+      <div class="content">
+        <div class="kicker">bai juyi's wider frame</div>
+        <h2 class="title" style="max-width:10ch;">《长恨歌》提醒我们：荔枝不是孤证。</h2>
+        <p class="body-text">白居易写“姊妹弟兄皆列土”，意思很明白：被看见的宠爱，往往不会只停留在两个人之间。它会扩散成家族荣耀、宫廷陈设、乐舞日常与更大的政治风向。</p>
+        <div class="grid-3">
+          <div class="mini-card">
+            <div class="label">structure 01</div>
+            <h3>家族抬升</h3>
+            <p>个人受宠会转换成亲族的身份、资源与接近权力的资格。</p>
+          </div>
+          <div class="mini-card">
+            <div class="label">structure 02</div>
+            <h3>日常铺张</h3>
+            <p>衣服、器玩、乐舞、供奉与珍果，都是同一结构不同表面。</p>
+          </div>
+          <div class="mini-card">
+            <div class="label">structure 03</div>
+            <h3>风声外溢</h3>
+            <p>后世讲一个果子，其实也在讲一个时代如何让欲望变成制度。</p>
+          </div>
+        </div>
+      </div>
+      <div class="page-foot">
+        <div class="title-note">果子只是露在外面的那一点红</div>
+        <div>structure</div>
+      </div>
+    </section>
+
+    <section class="slide dusk">
+      <div class="meta">
+        <div class="left"><span>Politics of Freshness</span><span class="rule"></span><span>three ideas</span></div>
+        <div class="right"><span>09 / 12</span></div>
+      </div>
+      <div class="side-note">新鮮　速度　代價</div>
+      <div class="orb berry" style="width:20vw;height:20vw;top:12vh;left:74vw;"><span class="pin">鮮</span></div>
+      <div class="content">
+        <div class="kicker" style="color:rgba(239,231,220,.6);">reading the system</div>
+        <h2 class="title" style="max-width:10ch;color:#f3ebdf;">新鲜，从来不是中性的。</h2>
+        <div class="grid-3">
+          <div class="tall-card">
+            <div class="label">idea 01</div>
+            <h3>时间被购买</h3>
+            <p>荔枝最值钱的不是肉，而是它还没有坏掉的这一小段时间。</p>
+          </div>
+          <div class="tall-card">
+            <div class="label">idea 02</div>
+            <h3>距离被命令</h3>
+            <p>普通人承受距离，宫廷可以暂时命令距离让路。这就是驿传被照亮的一刻。</p>
+          </div>
+          <div class="tall-card">
+            <div class="label">idea 03</div>
+            <h3>劳动被消音</h3>
+            <p>越顺利抵达，越像没有人付出代价。成功的供奉，往往会把过程抹平。</p>
+          </div>
+        </div>
+      </div>
+      <div class="page-foot">
+        <div class="title-note">甜味里，也藏着制度的硬边</div>
+        <div>politics</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="meta">
+        <div class="left"><span>Close Reading</span><span class="rule"></span><span>why this fruit</span></div>
+        <div class="right"><span>10 / 12</span></div>
+      </div>
+      <div class="side-note">偏偏是荔枝</div>
+      <div class="orb leaf" style="width:14vw;height:14vw;top:20vh;left:77vw;"><span class="pin">why</span></div>
+      <div class="content">
+        <div class="kicker">symbolic fit</div>
+        <h2 class="title" style="max-width:10ch;">为什么偏偏是荔枝，而不是别的贡物。</h2>
+        <div class="row-stack">
+          <div class="row">
+            <div class="term">颜色</div>
+            <p>红色表皮先于味道进入记忆，适合被写成一闪即过的视觉事件。</p>
+            <div class="mark">surface</div>
+          </div>
+          <div class="row">
+            <div class="term">时效</div>
+            <p>它必须快，快才制造戏剧，快也才让“妃子笑”显得像一场即时回应。</p>
+            <div class="mark">timing</div>
+          </div>
+          <div class="row">
+            <div class="term">尺度</div>
+            <p>它小，小就更像私密供奉；却又足够贵重，能立刻指向宫廷特殊待遇。</p>
+            <div class="mark">scale</div>
+          </div>
+          <div class="row">
+            <div class="term">意象</div>
+            <p>外壳粗粝、内里清甜，这种反差本身就适合被文学与戏剧不断重新加工。</p>
+            <div class="mark">image</div>
+          </div>
+        </div>
+      </div>
+      <div class="page-foot">
+        <div class="title-note">它适合被讲，也适合被误讲</div>
+        <div>symbol</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="meta">
+        <div class="left"><span>Afterlife</span><span class="rule"></span><span>cultural reuse</span></div>
+        <div class="right"><span>11 / 12</span></div>
+      </div>
+      <div class="side-note">後世　妃子笑　商品化</div>
+      <div class="orb berry" style="width:15vw;height:15vw;top:16vh;left:74vw;"><span class="pin">reuse</span></div>
+      <div class="orb gold" style="width:8vw;height:8vw;top:66vh;left:82vw;"><span class="pin">label</span></div>
+      <div class="content">
+        <div class="kicker">after the dynasty</div>
+        <h2 class="title" style="max-width:10ch;">帝国已远，故事还在继续被消费。</h2>
+        <div class="grid-2">
+          <div class="mini-card">
+            <div class="label">afterlife 01</div>
+            <h3>名称留下来</h3>
+            <p>“妃子笑”成为荔枝的商业名字之一，笑容比运输网络更容易售卖。</p>
+          </div>
+          <div class="mini-card">
+            <div class="label">afterlife 02</div>
+            <h3>旅游与影视再造</h3>
+            <p>华清宫、唐宫、贵妃形象被不断重拍，荔枝是最好辨认的道具之一。</p>
+          </div>
+          <div class="mini-card">
+            <div class="label">afterlife 03</div>
+            <h3>课堂里的捷径</h3>
+            <p>它常被讲成“一句诗背后的典故”，却很少顺手讲完制度与代价。</p>
+          </div>
+          <div class="mini-card">
+            <div class="label">afterlife 04</div>
+            <h3>记忆的偏爱</h3>
+            <p>后人总爱保留最轻的一部分，于是甜味留下，重量下沉。</p>
+          </div>
+        </div>
+      </div>
+      <div class="page-foot">
+        <div class="title-note">被命名的那一刻，也被商品化</div>
+        <div>afterlife</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="meta">
+        <div class="left"><span>Closing</span><span class="rule"></span><span>last sentence</span></div>
+        <div class="right"><span>12 / 12</span></div>
+      </div>
+      <div class="side-note">結語</div>
+      <div class="orb berry" style="width:18vw;height:18vw;top:18vh;left:70vw;"><span class="pin">終</span></div>
+      <div class="orb leaf" style="width:11vw;height:11vw;top:58vh;left:78vw;"><span class="pin">問</span></div>
+      <div class="content hero-end">
+        <div class="kicker">ending note</div>
+        <h2 class="big-statement">当一颗荔枝被要求不许失去水分，<br>它就不再只是水果。</h2>
+        <p class="subtitle">它是宠爱的证据，是帝国速度的试纸，也是后世记忆里一枚最轻、最亮、最容易被记住的红点。</p>
+        <p class="small-note">based on New Book of Tang, Du Mu, Bai Juyi, and later cultural memory</p>
+      </div>
+      <div class="page-foot">
+        <div class="title-note">让故事停在甜味之前，也停在甜味之后</div>
+        <div>close</div>
+      </div>
+    </section>
+  </div>
+
+  <div id="nav" aria-label="slide navigation"></div>
+  <div id="hint">arrow keys / wheel / tap dots</div>
+
+  <script>
+    const deck = document.getElementById('deck');
+    const slides = [...document.querySelectorAll('.slide')];
+    const nav = document.getElementById('nav');
+    let current = 0;
+    let lock = false;
+
+    deck.style.width = `${slides.length * 100}vw`;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => go(i));
+      nav.appendChild(dot);
+    });
+
+    function paint() {
+      deck.style.transform = `translateX(${-current * 100}vw)`;
+      [...nav.children].forEach((dot, i) => {
+        dot.classList.toggle('active', i === current);
+      });
+    }
+
+    function go(next) {
+      if (lock) return;
+      current = Math.max(0, Math.min(slides.length - 1, next));
+      paint();
+      lock = true;
+      setTimeout(() => lock = false, 620);
+    }
+
+    let wheelBuffer = 0;
+    let wheelTimer = null;
+    window.addEventListener('wheel', (event) => {
+      wheelBuffer += event.deltaY + event.deltaX;
+      if (Math.abs(wheelBuffer) > 54) {
+        go(current + (wheelBuffer > 0 ? 1 : -1));
+        wheelBuffer = 0;
+      }
+      clearTimeout(wheelTimer);
+      wheelTimer = setTimeout(() => wheelBuffer = 0, 120);
+    }, { passive: true });
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') {
+        event.preventDefault();
+        go(current + 1);
+      }
+      if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
+        event.preventDefault();
+        go(current - 1);
+      }
+      if (event.key === 'Home') {
+        event.preventDefault();
+        go(0);
+      }
+      if (event.key === 'End') {
+        event.preventDefault();
+        go(slides.length - 1);
+      }
+    });
+
+    let startX = 0;
+    let startY = 0;
+    window.addEventListener('touchstart', (event) => {
+      startX = event.touches[0].clientX;
+      startY = event.touches[0].clientY;
+    }, { passive: true });
+    window.addEventListener('touchend', (event) => {
+      const dx = event.changedTouches[0].clientX - startX;
+      const dy = event.changedTouches[0].clientY - startY;
+      if (Math.abs(dx) > 52 && Math.abs(dx) > Math.abs(dy)) {
+        go(current + (dx < 0 ? 1 : -1));
+      }
+    }, { passive: true });
+
+    paint();
+  </script>
+</body>
+</html>
