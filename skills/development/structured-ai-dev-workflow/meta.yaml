@@ -1,0 +1,25 @@
+id: structured-ai-dev-workflow
+title: Structured AI Dev Workflow
+title_zh: AI 结构化开发闭环
+status: active
+category:
+  - development
+  - workflow
+  - ai-coding
+formats:
+  - demand
+  - research
+  - plan
+  - phased-task
+  - worklog
+language:
+  - zh-CN
+  - en-metadata
+best_for:
+  - 中大型功能开发
+  - 需要 AI 先盘点再实现的需求
+  - 多阶段交付与阶段性 commit
+  - 长期项目的工程记忆沉淀
+source: user workflow based on embodio .docs practice
+collected_on: 2026-05-25
+example_count: 0

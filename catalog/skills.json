@@ -1,5 +1,26 @@
 [
   {
+    "id": "structured-ai-dev-workflow",
+    "title": "Structured AI Dev Workflow",
+    "title_zh": "AI 结构化开发闭环",
+    "status": "active",
+    "category": [
+      "development",
+      "workflow",
+      "ai-coding"
+    ],
+    "keywords": [
+      "demand",
+      "research",
+      "plan",
+      "phase task",
+      "commit",
+      "worklog"
+    ],
+    "path": "skills/development/structured-ai-dev-workflow",
+    "examples": []
+  },
+  {
     "id": "paper-breath-editorial-slides",
     "title": "Paper Breath Editorial Slides",
     "title_zh": "纸面呼吸感叙事课件",
@@ -22,4 +43,3 @@
     ]
   }
 ]
-
