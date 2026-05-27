@@ -1,0 +1,29 @@
+id: structured-report-md-to-html
+title: Structured Report Markdown To HTML
+title_zh: 结构化报告 Markdown 转 HTML
+status: active
+category:
+  - writing
+  - reports
+  - html
+formats:
+  - markdown-source
+  - single-file-html
+  - documentation-report
+language:
+  - zh-CN
+  - en-metadata
+visual_traits:
+  - sticky table of contents
+  - calm documentation layout
+  - semantic callouts
+  - dense tables and code blocks
+  - mobile-friendly single file
+best_for:
+  - 项目进展报告
+  - 操作手册型文档
+  - 验证记录与排查指南
+  - 面向交接的技术说明
+source: distilled from the Embodio platform docker report md/html pair
+collected_on: 2026-05-27
+example_count: 1

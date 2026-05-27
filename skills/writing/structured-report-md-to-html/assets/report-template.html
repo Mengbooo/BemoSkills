@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}}</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: #222;
+      background: #fff;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+    .page-layout {
+      display: flex;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .toc-sidebar {
+      width: 192px;
+      flex-shrink: 0;
+      padding-top: 52px;
+      padding-right: 28px;
+    }
+    .toc {
+      position: sticky;
+      top: 32px;
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 14px 16px;
+    }
+    .toc-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    .toc ol { margin: 0; padding-left: 18px; }
+    .toc li { margin: 5px 0; font-size: 13px; line-height: 1.4; }
+    .toc a { color: #555; text-decoration: none; }
+    .toc a:hover { color: #000; }
+    .wrap {
+      flex: 1;
+      min-width: 0;
+      max-width: 820px;
+      padding: 48px 0 80px;
+    }
+    h1 { font-size: 28px; font-weight: 700; margin-bottom: 24px; }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 44px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #111;
+    }
+    h3 { font-size: 17px; font-weight: 600; margin: 28px 0 10px; }
+    h4 { font-size: 15px; font-weight: 600; margin: 20px 0 8px; }
+    p { margin: 10px 0; }
+    ul, ol { margin: 8px 0 8px 24px; }
+    li + li { margin-top: 4px; }
+    strong { font-weight: 600; }
+    code {
+      font-family: "SF Mono", "Cascadia Code", Menlo, monospace;
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.88em;
+    }
+    pre {
+      background: #f7f7f7;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 14px 18px;
+      overflow-x: auto;
+      margin: 12px 0;
+      line-height: 1.55;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 13px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 14px;
+    }
+    th {
+      background: #fafafa;
+      font-weight: 600;
+      text-align: left;
+    }
+    th, td {
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+    }
+    .pass { color: #16a34a; font-weight: 600; }
+    .callout {
+      background: #f0f7ff;
+      border-left: 4px solid #3b82f6;
+      padding: 14px 18px;
+      border-radius: 4px;
+      margin: 16px 0;
+    }
+    .callout-warn {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+    }
+    .callout-tip {
+      background: #f6fbf7;
+      border-left: 4px solid #22c55e;
+    }
+    .callout-info {
+      background: #f5f8ff;
+      border-left: 4px solid #6366f1;
+    }
+    .flow-box {
+      background: #f9fafb;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 18px 20px;
+      margin: 12px 0;
+      font-family: "SF Mono", Menlo, monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      white-space: pre;
+      overflow-x: auto;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #e0e0e0;
+      margin: 36px 0;
+    }
+    .qa { margin-bottom: 24px; }
+    .qa-q { font-weight: 600; margin-bottom: 4px; }
+    @media (max-width: 900px) {
+      .toc-sidebar { display: none; }
+      .page-layout { padding: 0 16px; }
+    }
+    @media (max-width: 640px) {
+      .wrap { padding: 28px 0 48px; }
+      h1 { font-size: 24px; }
+      table { font-size: 13px; }
+      th, td { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-layout">
+    <aside class="toc-sidebar">
+      <nav class="toc">
+        <div class="toc-title">目录</div>
+        <ol>
+          <li><a href="#sec-1">{{SECTION_1}}</a></li>
+          <li><a href="#sec-2">{{SECTION_2}}</a></li>
+          <li><a href="#sec-3">{{SECTION_3}}</a></li>
+        </ol>
+      </nav>
+    </aside>
+
+    <div class="wrap">
+      <h1>{{TITLE}}</h1>
+
+      <h2 id="sec-1">{{SECTION_1}}</h2>
+      <div class="callout">
+        {{LEAD_SUMMARY}}
+      </div>
+
+      <hr>
+
+      <h2 id="sec-2">{{SECTION_2}}</h2>
+      <table>
+        <thead>
+          <tr><th>项目</th><th>状态</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>{{ITEM_A}}</td><td class="pass">通过</td><td>{{DETAIL_A}}</td></tr>
+          <tr><td>{{ITEM_B}}</td><td>{{STATUS_B}}</td><td>{{DETAIL_B}}</td></tr>
+        </tbody>
+      </table>
+
+      <h3>{{SUBSECTION_2_1}}</h3>
+      <pre><code>{{CODE_BLOCK}}</code></pre>
+
+      <h2 id="sec-3">{{SECTION_3}}</h2>
+      <div class="callout callout-warn">
+        <strong>待确认：</strong>{{WARN_TEXT}}
+      </div>
+
+      <div class="flow-box">{{FLOW_TEXT}}</div>
+
+      <div class="qa">
+        <p class="qa-q">Q1：{{QUESTION_1}}</p>
+        <p>{{ANSWER_1}}</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

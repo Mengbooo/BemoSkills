@@ -1,0 +1,29 @@
+id: notion-style-design-spec-md-to-html
+title: Notion Style Design Spec Markdown To HTML
+title_zh: Notion 风设计规格 Markdown 转 HTML
+status: active
+category:
+  - writing
+  - design-spec
+  - html
+formats:
+  - markdown-source
+  - single-file-html
+  - design-document
+language:
+  - zh-CN
+  - en-metadata
+visual_traits:
+  - notion-like layout
+  - two-level sticky toc
+  - header meta grid
+  - labeled code blocks
+  - status badges and step list
+best_for:
+  - 需求设计文档
+  - 技术方案规格说明
+  - 前后端对接文档
+  - API 契约与实施顺序说明
+source: distilled from the v0.2 task collection design html sample
+collected_on: 2026-05-27
+example_count: 1

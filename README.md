@@ -19,6 +19,31 @@ skills/
       meta.yaml                  # 元信息
       skill.md                   # AI 执行规程
       README.md                  # 人类使用说明
+  writing/                      # 写作 / 文档交付类
+    structured-report-md-to-html/
+      meta.yaml                  # 元信息
+      README.md                  # 人类快速使用说明
+      skill.md                   # 从结构化 Markdown 到 HTML 的规则
+      assets/
+        report-template.html     # 可复用的单文件 HTML 骨架
+      references/
+        component-map.md         # 组件映射说明
+      examples/
+        embodio-platform-docker-progress-report/
+          brief.md               # 真实样例说明
+          index.html             # 缩略版 HTML 示例
+    notion-style-design-spec-md-to-html/
+      meta.yaml                  # 元信息
+      README.md                  # 人类快速使用说明
+      skill.md                   # 设计规格文档风格规则
+      assets/
+        design-spec-template.html # Notion 风单文件 HTML 骨架
+      references/
+        component-map.md         # 组件映射说明
+      examples/
+        v0-2-task-collection-design/
+          brief.md               # 真实样例说明
+          index.html             # 缩略版 HTML 示例
   visual-storytelling/           # 视觉叙事类
     paper-breath-editorial-slides/
       meta.yaml                  # 元信息
@@ -34,6 +59,7 @@ skills/
 ## 当前分类法
 
 - `development`：AI 开发流程、工程闭环、阶段性交付、长期项目协作
+- `writing`：结构化报告、操作手册、FAQ、交接文档、Markdown 到 HTML 的稳定交付
 - `visual-storytelling`：海报、PPT、课件、封面、信息图、叙事页面
 - 后续可继续扩展为 `research`、`writing`、`automation`、`frontend`
 
@@ -51,10 +77,28 @@ skills/
    - 风格：温白纸面、雾化色团、细颗粒、安静留白、边缘元信息
    - 示例：`杨贵妃与荔枝`
 
+3. `structured-report-md-to-html`
+   - 中文名：结构化报告 Markdown 转 HTML
+   - 类型：写作交付 / 报告模板 / HTML 文档
+   - 风格：左侧目录、安静正文、提示块、风险块、流程块、FAQ、单文件交付
+   - 来源：基于 Embodio Docker 化进展报告的 Markdown / HTML 配对样例提炼
+   - 示例：`embodio-platform-docker-progress-report`
+
+4. `notion-style-design-spec-md-to-html`
+   - 中文名：Notion 风设计规格 Markdown 转 HTML
+   - 类型：写作交付 / 设计规格 / HTML 文档
+   - 风格：双栏 Notion 风、两级目录、meta-grid、tree、带文件名代码块、badge、steps
+   - 来源：基于 V0.2 公共采集平台设计文档 HTML 样例提炼
+   - 示例：`v0-2-task-collection-design`
+
 ## 使用方式
 
 - 浏览 skill 索引：查看 [catalog/skills.md](/Users/qiumengbo.123/Desktop/BemoSkills/catalog/skills.md)
+- 查看报告 HTML 模板：[report-template.html](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/structured-report-md-to-html/assets/report-template.html)
+- 查看设计规格 HTML 模板：[design-spec-template.html](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/notion-style-design-spec-md-to-html/assets/design-spec-template.html)
 - 打开示例课件：查看 [index.html](/Users/qiumengbo.123/Desktop/BemoSkills/skills/visual-storytelling/paper-breath-editorial-slides/examples/yang-guifei-and-lychee/index.html)
+- 打开报告示例：查看 [index.html](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/structured-report-md-to-html/examples/embodio-platform-docker-progress-report/index.html)
+- 打开设计规格示例：查看 [index.html](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/notion-style-design-spec-md-to-html/examples/v0-2-task-collection-design/index.html)
 
 ## 第一个归档示例
 

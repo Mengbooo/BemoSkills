@@ -21,6 +21,50 @@
     "examples": []
   },
   {
+    "id": "structured-report-md-to-html",
+    "title": "Structured Report Markdown To HTML",
+    "title_zh": "结构化报告 Markdown 转 HTML",
+    "status": "active",
+    "category": [
+      "writing",
+      "reports",
+      "html"
+    ],
+    "keywords": [
+      "markdown to html",
+      "structured report",
+      "handoff document",
+      "single file html",
+      "toc callout faq"
+    ],
+    "path": "skills/writing/structured-report-md-to-html",
+    "examples": [
+      "skills/writing/structured-report-md-to-html/examples/embodio-platform-docker-progress-report/index.html"
+    ]
+  },
+  {
+    "id": "notion-style-design-spec-md-to-html",
+    "title": "Notion Style Design Spec Markdown To HTML",
+    "title_zh": "Notion 风设计规格 Markdown 转 HTML",
+    "status": "active",
+    "category": [
+      "writing",
+      "design-spec",
+      "html"
+    ],
+    "keywords": [
+      "notion style",
+      "design spec",
+      "two-level toc",
+      "code block header",
+      "badge steps tree"
+    ],
+    "path": "skills/writing/notion-style-design-spec-md-to-html",
+    "examples": [
+      "skills/writing/notion-style-design-spec-md-to-html/examples/v0-2-task-collection-design/index.html"
+    ]
+  },
+  {
     "id": "paper-breath-editorial-slides",
     "title": "Paper Breath Editorial Slides",
     "title_zh": "纸面呼吸感叙事课件",
