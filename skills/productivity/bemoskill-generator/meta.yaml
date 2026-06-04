@@ -1,0 +1,19 @@
+id: bemoskill-generator
+title: BemoSkill Generator
+title_zh: BemoSkill 生成器：自动生成符合仓库规范的 skill
+status: active
+category:
+  - productivity
+  - meta
+formats:
+  - skill-generation
+  - catalog-management
+language:
+  - zh-CN
+  - en
+best_for:
+  - 为新工作流创建标准化的 BemoSkill
+  - 自动生成 meta.yaml 和 skill.md
+  - 更新 catalog 索引文件
+source: distilled from BemoSkills repository conventions
+collected_on: 2026-06-04

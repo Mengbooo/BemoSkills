@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill Detail — BemoSkills</title>
+<style>
+  :root {
+    --bg: #0a0a0b; --surface: #131316; --border: #1e1e24;
+    --text: #e1e1e6; --text-muted: #8b8b96; --accent: #6ee7b7;
+    --accent-dim: #34d399; --tag-bg: #1a1a20; --tag-text: #a0a0b0;
+    --badge-active: #065f46; --badge-active-text: #6ee7b7;
+    --badge-archived: #3f3f46; --badge-archived-text: #a1a1aa;
+    --code-bg: #1a1a22; --code-border: #2a2a35;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.7; min-height: 100vh;
+  }
+  .topbar {
+    padding: 16px 24px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 16px;
+  }
+  .back-btn {
+    color: var(--accent-dim); text-decoration: none; font-size: 14px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .back-btn:hover { color: var(--accent); }
+  .container { max-width: 860px; margin: 0 auto; padding: 40px 24px; }
+
+  /* Header */
+  .skill-header { margin-bottom: 32px; }
+  .skill-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .skill-id { font-size: 12px; font-family: 'SF Mono', 'Fira Code', monospace; color: var(--text-muted); background: var(--surface); padding: 2px 8px; border-radius: 4px; }
+  .skill-status { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  .skill-status.active { background: var(--badge-active); color: var(--badge-active-text); }
+  .skill-status.archived { background: var(--badge-archived); color: var(--badge-archived-text); }
+  .skill-title { font-size: 32px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+  .skill-title-zh { font-size: 18px; color: var(--text-muted); margin-bottom: 16px; }
+  .skill-cats { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .cat-tag { font-size: 12px; padding: 3px 10px; border-radius: 4px; background: var(--tag-bg); color: var(--tag-text); font-family: 'SF Mono', 'Fira Code', monospace; }
+  .skill-bestfor { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; }
+  .skill-bestfor h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 8px; }
+  .skill-bestfor ul { list-style: none; padding: 0; }
+  .skill-bestfor li { font-size: 14px; padding: 4px 0; }
+  .skill-bestfor li::before { content: "→ "; color: var(--accent-dim); }
+
+  /* Content */
+  .content { margin-top: 32px; }
+  .content h1 { font-size: 26px; margin: 32px 0 16px; }
+  .content h2 { font-size: 20px; margin: 28px 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .content h3 { font-size: 16px; margin: 20px 0 8px; color: var(--accent-dim); }
+  .content p { margin: 8px 0; color: var(--text); }
+  .content ul, .content ol { margin: 8px 0; padding-left: 20px; }
+  .content li { margin: 4px 0; }
+  .content strong { color: var(--accent); }
+  .content em { color: var(--text-muted); }
+  .content a { color: var(--accent-dim); }
+  .content code {
+    background: var(--code-bg); border: 1px solid var(--code-border);
+    padding: 2px 6px; border-radius: 4px; font-size: 13px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+  }
+  .content pre {
+    background: var(--code-bg); border: 1px solid var(--code-border);
+    padding: 16px 20px; border-radius: 8px; overflow-x: auto;
+    margin: 12px 0; font-size: 13px;
+    font-family: 'SF Mono', 'Fira Code', monospace; line-height: 1.5;
+  }
+  .content table {
+    width: 100%; border-collapse: collapse; margin: 12px 0;
+    font-size: 13px;
+  }
+  .content th {
+    text-align: left; padding: 10px 12px; background: var(--surface);
+    border-bottom: 1px solid var(--border); font-weight: 600;
+    color: var(--text-muted); text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px;
+  }
+  .content td {
+    padding: 10px 12px; border-bottom: 1px solid var(--border);
+  }
+  .content blockquote {
+    border-left: 3px solid var(--accent-dim); padding: 8px 16px;
+    margin: 12px 0; background: var(--surface); border-radius: 0 6px 6px 0;
+    color: var(--text-muted);
+  }
+  .content hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .content input[type="checkbox"] { margin-right: 6px; accent-color: var(--accent-dim); }
+
+  .footer {
+    text-align: center; padding: 40px 24px; border-top: 1px solid var(--border);
+    color: var(--text-muted); font-size: 13px;
+  }
+  .footer a { color: var(--accent-dim); text-decoration: none; }
+
+  .loading { text-align: center; padding: 80px 20px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="index.html" class="back-btn">← Back to skills</a>
+</div>
+<div class="container" id="app"><div class="loading">Loading...</div></div>
+<footer class="footer">
+  <p><a href="https://github.com/Mengbooo/BemoSkills">github.com/Mengbooo/BemoSkills</a></p>
+</footer>
+<script>
+(function() {
+  var id = new URLSearchParams(location.search).get('id');
+  if (!id) { document.getElementById('app').innerHTML = '<div class="loading">No skill ID specified. <a href="index.html">Back to catalog</a></div>'; return; }
+
+  function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+  Promise.all([
+    fetch('catalog/skills.json').then(function(r) { return r.json(); }),
+    fetch('skills/' + id.replace(/-/g, '/') + '/skill.md').then(function(r) { return r.text(); })
+  ]).then(function(results) {
+    var skills = results[0];
+    var mdRaw = results[1];
+    var skill = null;
+    for (var i = 0; i < skills.length; i++) {
+      if (skills[i].id === id) { skill = skills[i]; break; }
+    }
+    if (!skill) { document.getElementById('app').innerHTML = '<div class="loading">Skill not found in catalog. <a href="index.html">Back</a></div>'; return; }
+
+    // Parse frontmatter from skill.md
+    var body = mdRaw;
+    var fm = {};
+    if (body.slice(0,4) === '---\n' || body.slice(0,4) === '---\r') {
+      var end = body.indexOf('\n---', 4);
+      if (end !== -1) {
+        var fmRaw = body.slice(4, end);
+        body = body.slice(end + 5);
+        var lines = fmRaw.split('\n');
+        for (var j = 0; j < lines.length; j++) {
+          var line = lines[j];
+          var ci = line.indexOf(':');
+          if (ci !== -1) {
+            fm[line.slice(0, ci).trim()] = line.slice(ci + 1).trim();
+          }
+        }
+      }
+    }
+    body = body.trim();
+
+    // Render markdown to HTML
+    var html = renderMarkdown(body);
+
+    // Page title
+    document.title = skill.title + ' — BemoSkills';
+
+    // Build page
+    var out = '';
+    out += '<div class="skill-header">';
+    out += '<div class="skill-meta">';
+    out += '<span class="skill-id">' + esc(skill.id) + '</span>';
+    out += '<span class="skill-status ' + esc(skill.status) + '">' + esc(skill.status) + '</span>';
+    out += '</div>';
+    out += '<h1 class="skill-title">' + esc(skill.title) + '</h1>';
+    out += '<div class="skill-title-zh">' + esc(skill.title_zh) + '</div>';
+    out += '<div class="skill-cats">';
+    for (var c = 0; c < skill.category.length; c++) {
+      out += '<span class="cat-tag">' + esc(skill.category[c]) + '</span>';
+    }
+    out += '</div>';
+    if (skill.best_for || (skill.keywords && skill.keywords.length)) {
+      var scenarios = skill.best_for || ((skill.title_zh || '') + ' — ' + (skill.keywords || []).join('、'));
+      out += '<div class="skill-bestfor"><h4>Best For</h4><ul><li>' + esc(scenarios) + '</li></ul></div>';
+    }
+    out += '</div>';
+    out += '<div class="content">' + html + '</div>';
+
+    document.getElementById('app').innerHTML = out;
+  }).catch(function(err) {
+    document.getElementById('app').innerHTML = '<div class="loading">Error loading skill. <a href="index.html">Back</a></div><p style="color:var(--text-muted);font-size:13px;">' + err.message + '</p>';
+  });
+
+  // Simple markdown renderer
+  function renderMarkdown(md) {
+    var lines = md.split('\n');
+    var out = '';
+    var inCode = false, codeBuf = '', codeLang = '';
+    var inTable = false, tableRows = [], tableAlign = [];
+    var i = 0;
+
+    function flushTable() {
+      if (!inTable || tableRows.length === 0) { inTable = false; tableRows = []; tableAlign = []; return ''; }
+      var h = '<table>';
+      for (var r = 0; r < tableRows.length; r++) {
+        var tag = r === 0 ? 'th' : 'td';
+        h += '<tr>';
+        for (var c = 0; c < tableRows[r].length; c++) {
+          h += '<' + tag + '>' + inlineRender(tableRows[r][c]) + '</' + tag + '>';
+        }
+        h += '</tr>';
+      }
+      h += '</table>';
+      inTable = false; tableRows = []; tableAlign = [];
+      return h;
+    }
+
+    function flushBuffer() {
+      if (out && out.slice(-1) !== '\n') out += '\n';
+    }
+
+    function inlineRender(text) {
+      // Bold
+      text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      // Italic
+      text = text.replace(/\*(.+?)\*/g, '<em>$1</em>');
+      // Inline code
+      text = text.replace(/`([^`]+)`/g, '<code>$1</code>');
+      // Links [text](url)
+      text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
+      return text;
+    }
+
+    while (i < lines.length) {
+      var line = lines[i];
+
+      // Code block
+      if (line.trim().slice(0,3) === '```') {
+        if (inCode) {
+          out += '<pre><code>' + esc(codeBuf) + '</code></pre>';
+          codeBuf = ''; codeLang = ''; inCode = false;
+        } else {
+          if (inTable) { out += flushTable(); }
+          codeLang = line.trim().slice(3).trim();
+          inCode = true;
+        }
+        i++; continue;
+      }
+      if (inCode) { codeBuf += (codeBuf ? '\n' : '') + line; i++; continue; }
+
+      // Table
+      if (line.indexOf('|') !== -1 && line.trim().slice(0,1) === '|') {
+        var cells = line.split('|').slice(1, -1).map(function(c) { return c.trim(); });
+        // Separator row
+        if (cells.every(function(c) { return /^:?-{3,}:?$/.test(c); })) {
+          if (!inTable) { inTable = true; }
+          i++; continue;
+        }
+        if (!inTable) { inTable = true; }
+        tableRows.push(cells);
+        i++; continue;
+      } else if (inTable) {
+        out += flushTable();
+      }
+
+      // Headings
+      var hMatch = line.match(/^(#{1,6})\s+(.+)/);
+      if (hMatch) {
+        var level = hMatch[1].length;
+        out += '<h' + level + '>' + inlineRender(hMatch[2]) + '</h' + level + '>';
+        i++; continue;
+      }
+
+      // Horizontal rule
+      if (/^-{3,}$/.test(line.trim())) {
+        out += '<hr>';
+        i++; continue;
+      }
+
+      // Blockquote
+      if (line.trim().slice(0,2) === '> ') {
+        out += '<blockquote>' + inlineRender(line.trim().slice(2)) + '</blockquote>';
+        i++; continue;
+      }
+
+      // Unordered list
+      if (/^[\s]*[-*+]\s+/.test(line)) {
+        var indent = line.match(/^(\s*)/)[1].length;
+        out += '<ul><li>' + inlineRender(line.replace(/^[\s]*[-*+]\s+/, '')) + '</li></ul>';
+        i++; continue;
+      }
+
+      // Ordered list
+      var olMatch = line.match(/^[\s]*(\d+)\.\s+(.+)/);
+      if (olMatch) {
+        out += '<ol><li>' + inlineRender(olMatch[2]) + '</li></ol>';
+        i++; continue;
+      }
+
+      // Checkbox
+      var cbMatch = line.match(/^[\s]*[-*+]\s+\[([ xX])\]\s+(.+)/);
+      if (cbMatch) {
+        var checked = cbMatch[1].toLowerCase() === 'x' ? ' checked' : '';
+        out += '<div><input type="checkbox"' + checked + ' disabled> ' + inlineRender(cbMatch[2]) + '</div>';
+        i++; continue;
+      }
+
+      // Empty line
+      if (line.trim() === '') {
+        out += '<br>';
+        i++; continue;
+      }
+
+      // Paragraph
+      out += '<p>' + inlineRender(line) + '</p>';
+      i++;
+    }
+
+    if (inCode) { out += '<pre><code>' + esc(codeBuf) + '</code></pre>'; }
+    if (inTable) { out += flushTable(); }
+
+    return out;
+  }
+})();
+</script>
+</body>
+</html>

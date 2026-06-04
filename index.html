@@ -130,7 +130,6 @@
   </aside>
   <main class="main">
     <div class="search-wrap">
-      <span class="icon">&#x1F50D;</span>
       <input type="text" id="search" placeholder="Search skills..." autocomplete="off">
     </div>
     <div id="results"></div>
@@ -194,7 +193,7 @@
       html += '<div class="section-title">' + capitalize(cat) + '</div><div class="card-list">';
       for (var k = 0; k < items.length; k++) {
         var s = items[k];
-        html += '<div class="card" data-path="' + esc(s.path) + '/skill.md">';
+        html += '<div class="card" data-id="' + esc(s.id) + '">';
         html += '<div class="card-header">';
         html += '<span class="card-name">' + esc(s.title) + '</span>';
         html += '<span class="card-zh">' + esc(s.title_zh) + '</span>';
@@ -218,7 +217,7 @@
     var cards = container.querySelectorAll('.card');
     for (var p = 0; p < cards.length; p++) {
       cards[p].addEventListener('click', function() {
-        window.open(this.getAttribute('data-path'), '_blank');
+        location.href = 'detail.html?id=' + this.getAttribute('data-id');
       });
     }
   }

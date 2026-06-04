@@ -74,3 +74,11 @@
 - 适用：调研主题自动写入 Obsidian、带完整引用链接的结构化报告、研究成果 Git 自动提交
 - 关键词：obsidian、research、web search、markdown report、git commit
 - 目录：[skills/productivity/obsidian-write](/Users/qiumengbo.123/Desktop/BemoSkills/skills/productivity/obsidian-write)
+
+### `bemoskill-generator`
+
+- 中文名：BemoSkill 生成器
+- 状态：active
+- 适用：为新工作流创建标准化 BemoSkill、自动生成 meta.yaml 和 skill.md、更新 catalog 索引
+- 关键词：bemoskill、skill generator、meta.yaml、catalog
+- 目录：[skills/productivity/bemoskill-generator](/Users/qiumengbo.123/Desktop/BemoSkills/skills/productivity/bemoskill-generator)

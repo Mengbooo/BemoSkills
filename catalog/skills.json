@@ -111,5 +111,15 @@
     ],
     "path": "skills/productivity/obsidian-write",
     "examples": []
+  },
+  {
+    "id": "bemoskill-generator",
+    "title": "BemoSkill Generator",
+    "title_zh": "BemoSkill 生成器",
+    "status": "active",
+    "category": ["productivity", "meta"],
+    "keywords": ["bemoskill", "skill generator", "meta.yaml", "catalog"],
+    "path": "skills/productivity/bemoskill-generator",
+    "examples": []
   }
 ]
