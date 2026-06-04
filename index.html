@@ -1,498 +1,300 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BemoSkills — Personal Agent Skill Collection</title>
-    <style>
-      :root {
-        --bg: #0a0a0b;
-        --surface: #131316;
-        --border: #1e1e24;
-        --text: #e1e1e6;
-        --text-muted: #8b8b96;
-        --accent: #6ee7b7;
-        --accent-dim: #34d399;
-        --tag-bg: #1a1a20;
-        --tag-text: #a0a0b0;
-        --hover: #1c1c22;
-        --badge-active: #065f46;
-        --badge-active-text: #6ee7b7;
-        --badge-archived: #3f3f46;
-        --badge-archived-text: #a1a1aa;
-      }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BemoSkills — Personal Agent Skill Collection</title>
+<style>
+  :root {
+    --bg: #0a0a0b;
+    --surface: #131316;
+    --border: #1e1e24;
+    --text: #e1e1e6;
+    --text-muted: #8b8b96;
+    --accent: #6ee7b7;
+    --accent-dim: #34d399;
+    --tag-bg: #1a1a20;
+    --tag-text: #a0a0b0;
+    --hover: #1c1c22;
+    --badge-active: #065f46;
+    --badge-active-text: #6ee7b7;
+    --badge-archived: #3f3f46;
+    --badge-archived-text: #a1a1aa;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh;
+  }
+  .hero {
+    padding: 60px 24px 40px; text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero pre {
+    font-size: 12px; line-height: 1.15; color: var(--accent);
+    display: inline-block; text-align: left; margin-bottom: 16px;
+  }
+  .hero p { color: var(--text-muted); font-size: 16px; max-width: 520px; margin: 0 auto; }
+  .stats {
+    display: flex; justify-content: center; gap: 40px;
+    padding: 20px 24px; border-bottom: 1px solid var(--border); font-size: 14px;
+  }
+  .stat { text-align: center; }
+  .stat .num { font-size: 24px; font-weight: 700; color: var(--accent); }
+  .stat .label { color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .layout { max-width: 1100px; margin: 0 auto; padding: 32px 24px; display: flex; gap: 32px; }
+  .sidebar { width: 200px; flex-shrink: 0; }
+  .main { flex: 1; min-width: 0; }
+  .sidebar-title {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px;
+    color: var(--text-muted); margin-bottom: 12px; font-weight: 600;
+  }
+  .cat-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+  .cat-btn {
+    display: flex; align-items: center; gap: 8px;
+    width: 100%; padding: 8px 12px; border: none; border-radius: 6px;
+    background: transparent; color: var(--text-muted); font-size: 14px;
+    cursor: pointer; text-align: left; transition: all 0.15s; font-family: inherit;
+  }
+  .cat-btn:hover { background: var(--hover); color: var(--text); }
+  .cat-btn.active { background: var(--surface); color: var(--accent); font-weight: 500; }
+  .cat-count { font-size: 11px; color: var(--text-muted); margin-left: auto; }
+  .search-wrap { position: relative; margin-bottom: 24px; }
+  .search-wrap input {
+    width: 100%; padding: 10px 14px 10px 38px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+    color: var(--text); font-size: 14px; outline: none; font-family: inherit;
+  }
+  .search-wrap input:focus { border-color: var(--accent-dim); }
+  .search-wrap .icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 14px; }
+  .section-title {
+    font-size: 14px; font-weight: 600; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.5px;
+    margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border);
+  }
+  .card-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 20px 24px; cursor: pointer; transition: all 0.15s;
+  }
+  .card:hover { border-color: var(--accent-dim); background: var(--hover); }
+  .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+  .card-name { font-size: 18px; font-weight: 600; color: var(--text); }
+  .card-zh { font-size: 13px; color: var(--text-muted); }
+  .card-status { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  .card-status.active { background: var(--badge-active); color: var(--badge-active-text); }
+  .card-status.archived { background: var(--badge-archived); color: var(--badge-archived-text); }
+  .card-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 10px; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-size: 11px; padding: 2px 8px; border-radius: 4px; background: var(--tag-bg); color: var(--tag-text); font-family: 'SF Mono', 'Fira Code', monospace; }
+  .empty { text-align: center; padding: 60px 20px; color: var(--text-muted); }
+  .empty .icon { font-size: 40px; margin-bottom: 12px; opacity: 0.4; }
+  .footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 13px; }
+  .footer a { color: var(--accent-dim); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+  @media (max-width: 768px) {
+    .layout { flex-direction: column; padding: 20px 16px; }
+    .sidebar { width: 100%; }
+    .cat-list { flex-direction: row; flex-wrap: wrap; gap: 4px; }
+    .cat-btn { width: auto; font-size: 12px; padding: 6px 10px; }
+    .cat-count { display: none; }
+    .stats { gap: 24px; }
+    .hero pre { font-size: 9px; }
+  }
+</style>
+</head>
+<body>
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family:
-          -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.6;
-        min-height: 100vh;
-      }
-
-      /* ── Ascii Hero ── */
-      .hero {
-        padding: 60px 24px 40px;
-        text-align: center;
-        border-bottom: 1px solid var(--border);
-      }
-      .hero pre {
-        font-size: 12px;
-        line-height: 1.15;
-        color: var(--accent);
-        display: inline-block;
-        text-align: left;
-        margin-bottom: 16px;
-      }
-      .hero h1 {
-        font-size: 32px;
-        font-weight: 700;
-        letter-spacing: -0.5px;
-        margin-bottom: 8px;
-      }
-      .hero p {
-        color: var(--text-muted);
-        font-size: 16px;
-        max-width: 520px;
-        margin: 0 auto;
-      }
-
-      /* ── Stats Bar ── */
-      .stats {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        padding: 20px 24px;
-        border-bottom: 1px solid var(--border);
-        font-size: 14px;
-      }
-      .stat {
-        text-align: center;
-      }
-      .stat .num {
-        font-size: 24px;
-        font-weight: 700;
-        color: var(--accent);
-      }
-      .stat .label {
-        color: var(--text-muted);
-        font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      /* ── Layout ── */
-      .layout {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 32px 24px;
-        display: flex;
-        gap: 32px;
-      }
-      .sidebar {
-        width: 200px;
-        flex-shrink: 0;
-      }
-      .main {
-        flex: 1;
-        min-width: 0;
-      }
-
-      /* ── Sidebar ── */
-      .sidebar-title {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.8px;
-        color: var(--text-muted);
-        margin-bottom: 12px;
-        font-weight: 600;
-      }
-      .cat-list {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-      }
-      .cat-btn {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        width: 100%;
-        padding: 8px 12px;
-        border: none;
-        border-radius: 6px;
-        background: transparent;
-        color: var(--text-muted);
-        font-size: 14px;
-        cursor: pointer;
-        text-align: left;
-        transition: all 0.15s;
-        font-family: inherit;
-      }
-      .cat-btn:hover {
-        background: var(--hover);
-        color: var(--text);
-      }
-      .cat-btn.active {
-        background: var(--surface);
-        color: var(--accent);
-        font-weight: 500;
-      }
-      .cat-count {
-        font-size: 11px;
-        color: var(--text-muted);
-        margin-left: auto;
-      }
-
-      /* ── Search ── */
-      .search-wrap {
-        position: relative;
-        margin-bottom: 24px;
-      }
-      .search-wrap input {
-        width: 100%;
-        padding: 10px 14px 10px 38px;
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        color: var(--text);
-        font-size: 14px;
-        outline: none;
-        font-family: inherit;
-      }
-      .search-wrap input:focus {
-        border-color: var(--accent-dim);
-      }
-      .search-wrap .icon {
-        position: absolute;
-        left: 12px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: var(--text-muted);
-        font-size: 14px;
-      }
-
-      /* ── Cards ── */
-      .section-title {
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--text-muted);
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-bottom: 16px;
-        padding-bottom: 8px;
-        border-bottom: 1px solid var(--border);
-      }
-      .card-list {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-      .card {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 10px;
-        padding: 20px 24px;
-        cursor: pointer;
-        transition: all 0.15s;
-        position: relative;
-      }
-      .card:hover {
-        border-color: var(--accent-dim);
-        background: var(--hover);
-      }
-      .card-header {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 8px;
-      }
-      .card-name {
-        font-size: 18px;
-        font-weight: 600;
-        color: var(--text);
-      }
-      .card-zh {
-        font-size: 13px;
-        color: var(--text-muted);
-        margin-left: 4px;
-      }
-      .card-status {
-        font-size: 10px;
-        padding: 2px 8px;
-        border-radius: 10px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-      .card-status.active {
-        background: var(--badge-active);
-        color: var(--badge-active-text);
-      }
-      .card-status.archived {
-        background: var(--badge-archived);
-        color: var(--badge-archived-text);
-      }
-      .card-desc {
-        font-size: 14px;
-        color: var(--text-muted);
-        margin-bottom: 10px;
-      }
-      .card-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-      }
-      .tag {
-        font-size: 11px;
-        padding: 2px 8px;
-        border-radius: 4px;
-        background: var(--tag-bg);
-        color: var(--tag-text);
-        font-family: "SF Mono", "Fira Code", monospace;
-      }
-
-      /* ── Empty State ── */
-      .empty {
-        text-align: center;
-        padding: 60px 20px;
-        color: var(--text-muted);
-      }
-      .empty .icon {
-        font-size: 40px;
-        margin-bottom: 12px;
-        opacity: 0.4;
-      }
-
-      /* ── Footer ── */
-      .footer {
-        text-align: center;
-        padding: 40px 24px;
-        border-top: 1px solid var(--border);
-        color: var(--text-muted);
-        font-size: 13px;
-      }
-      .footer a {
-        color: var(--accent-dim);
-        text-decoration: none;
-      }
-      .footer a:hover {
-        text-decoration: underline;
-      }
-
-      /* ── Responsive ── */
-      @media (max-width: 768px) {
-        .layout {
-          flex-direction: column;
-          padding: 20px 16px;
-        }
-        .sidebar {
-          width: 100%;
-        }
-        .cat-list {
-          flex-direction: row;
-          flex-wrap: wrap;
-          gap: 4px;
-        }
-        .cat-btn {
-          width: auto;
-          font-size: 12px;
-          padding: 6px 10px;
-        }
-        .cat-count {
-          display: none;
-        }
-        .stats {
-          gap: 24px;
-        }
-        .hero pre {
-          font-size: 9px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Hero -->
-    <header class="hero">
-      <pre>
+<header class="hero">
+<pre>
  ██████╗ ███████╗███╗   ███╗ ██████╗ ███████╗██╗  ██╗██╗██╗     ██╗     ███████╗
  ██╔══██╗██╔════╝████╗ ████║██╔═══██╗██╔════╝██║ ██╔╝██║██║     ██║     ██╔════╝
  ██████╔╝█████╗  ██╔████╔██║██║   ██║███████╗█████╔╝ ██║██║     ██║     ███████╗
  ██╔══██╗██╔══╝  ██║╚██╔╝██║██║   ██║╚════██║██╔═██╗ ██║██║     ██║     ╚════██║
  ██████╔╝███████╗██║ ╚═╝ ██║╚██████╔╝███████║██║  ██╗██║███████╗███████╗███████║
  ╚═════╝ ╚══════╝╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚══════╝
-  </pre
-      >
-      <h1>BemoSkills</h1>
-      <p>Personal agent skill collection — curated, cataloged, ready to use.</p>
-    </header>
+</pre>
+<p>Personal agent skill collection — curated, cataloged, ready to use.</p>
+</header>
 
-    <!-- Stats -->
-    <div class="stats" id="stats">
-      <div class="stat">
-        <span class="num" id="stat-total">-</span
-        ><span class="label">Skills</span>
-      </div>
-      <div class="stat">
-        <span class="num" id="stat-categories">-</span
-        ><span class="label">Categories</span>
-      </div>
-      <div class="stat">
-        <span class="num" id="stat-active">-</span
-        ><span class="label">Active</span>
-      </div>
+<div class="stats" id="stats">
+  <div class="stat"><span class="num" id="stat-total">-</span><span class="label">Skills</span></div>
+  <div class="stat"><span class="num" id="stat-categories">-</span><span class="label">Categories</span></div>
+  <div class="stat"><span class="num" id="stat-active">-</span><span class="label">Active</span></div>
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-title">Categories</div>
+    <ul class="cat-list" id="cat-list"></ul>
+  </aside>
+  <main class="main">
+    <div class="search-wrap">
+      <span class="icon">&#x1F50D;</span>
+      <input type="text" id="search" placeholder="Search skills..." autocomplete="off">
     </div>
+    <div id="results"></div>
+  </main>
+</div>
 
-    <!-- Main Layout -->
-    <div class="layout">
-      <aside class="sidebar">
-        <div class="sidebar-title">Categories</div>
-        <ul class="cat-list" id="cat-list"></ul>
-      </aside>
-      <main class="main">
-        <div class="search-wrap">
-          <span class="icon">&#x1F50D;</span>
-          <input
-            type="text"
-            id="search"
-            placeholder="Search skills..."
-            autocomplete="off"
-          />
-        </div>
-        <div id="results"></div>
-      </main>
-    </div>
+<footer class="footer">
+  <p><a href="https://github.com/Mengbooo/BemoSkills" target="_blank">github.com/Mengbooo/BemoSkills</a> — personal agent skill collection</p>
+</footer>
 
-    <footer class="footer">
-      <p>
-        <a href="https://github.com/Mengbooo/BemoSkills" target="_blank"
-          >github.com/Mengbooo/BemoSkills</a
-        >
-        — personal agent skill collection
-      </p>
-    </footer>
+<script>
+(function() {
+  var skills = [];
+  var activeCat = 'all';
+  var searchInput;
+  var catList;
 
-    <script>
-      (async function () {
-        const resp = await fetch("catalog/skills.json");
-        const skills = await resp.json();
+  function capitalize(s) {
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+  function esc(s) {
+    var d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
 
-        // ── Stats ──
-        const active = skills.filter((s) => s.status === "active");
-        const categories = [...new Set(skills.flatMap((s) => s.category))];
-        document.getElementById("stat-total").textContent = skills.length;
-        document.getElementById("stat-categories").textContent =
-          categories.length;
-        document.getElementById("stat-active").textContent = active.length;
+  function render() {
+    var query = (searchInput.value || '').toLowerCase();
+    var filtered = skills;
+    if (activeCat !== 'all') {
+      filtered = filtered.filter(function(s) { return s.category[0] === activeCat; });
+    }
+    if (query) {
+      filtered = filtered.filter(function(s) {
+        return s.title.toLowerCase().indexOf(query) !== -1 ||
+          s.title_zh.toLowerCase().indexOf(query) !== -1 ||
+          s.keywords.some(function(k) { return k.toLowerCase().indexOf(query) !== -1; }) ||
+          s.id.toLowerCase().indexOf(query) !== -1;
+      });
+    }
 
-        // ── Group by primary category ──
-        const grouped = {};
-        for (const s of skills) {
-          const cat = s.category[0] || "uncategorized";
-          if (!grouped[cat]) grouped[cat] = [];
-          grouped[cat].push(s);
+    var container = document.getElementById('results');
+    if (!filtered.length) {
+      container.innerHTML = '<div class="empty"><div class="icon">&#x1F50E;</div>No matching skills found</div>';
+      return;
+    }
+
+    var fg = {};
+    for (var i = 0; i < filtered.length; i++) {
+      var s = filtered[i];
+      var c = s.category[0] || 'uncategorized';
+      if (!fg[c]) fg[c] = [];
+      fg[c].push(s);
+    }
+
+    var html = '';
+    var cats = Object.keys(fg);
+    for (var j = 0; j < cats.length; j++) {
+      var cat = cats[j];
+      var items = fg[cat];
+      html += '<div class="section-title">' + capitalize(cat) + '</div><div class="card-list">';
+      for (var k = 0; k < items.length; k++) {
+        var s = items[k];
+        html += '<div class="card" data-path="' + esc(s.path) + '/skill.md">';
+        html += '<div class="card-header">';
+        html += '<span class="card-name">' + esc(s.title) + '</span>';
+        html += '<span class="card-zh">' + esc(s.title_zh) + '</span>';
+        html += '<span class="card-status ' + esc(s.status) + '">' + esc(s.status) + '</span>';
+        html += '</div>';
+        html += '<div class="card-desc">' + esc(s.keywords.join(' · ')) + '</div>';
+        html += '<div class="card-tags">';
+        for (var m = 0; m < s.category.length; m++) {
+          html += '<span class="tag">' + esc(s.category[m]) + '</span>';
         }
-
-        // ── Sidebar ──
-        const catList = document.getElementById("cat-list");
-        const allBtn = document.createElement("li");
-        allBtn.innerHTML = `<button class="cat-btn active" data-cat="all">All<span class="cat-count">${skills.length}</span></button>`;
-        catList.appendChild(allBtn);
-        for (const [cat, items] of Object.entries(grouped)) {
-          const li = document.createElement("li");
-          li.innerHTML = `<button class="cat-btn" data-cat="${cat}">${capitalize(cat)}<span class="cat-count">${items.length}</span></button>`;
-          catList.appendChild(li);
+        for (var n = 0; n < Math.min(s.keywords.length, 4); n++) {
+          html += '<span class="tag">' + esc(s.keywords[n]) + '</span>';
         }
+        html += '</div></div>';
+      }
+      html += '</div>';
+    }
+    container.innerHTML = html;
 
-        let activeCat = "all";
-        const searchInput = document.getElementById("search");
+    // Attach click handlers to cards
+    var cards = container.querySelectorAll('.card');
+    for (var p = 0; p < cards.length; p++) {
+      cards[p].addEventListener('click', function() {
+        window.open(this.getAttribute('data-path'), '_blank');
+      });
+    }
+  }
 
-        // ── Render ──
-        function render() {
-          const query = searchInput.value.toLowerCase();
-          let filtered = skills;
-          if (activeCat !== "all")
-            filtered = filtered.filter((s) => s.category[0] === activeCat);
-          if (query)
-            filtered = filtered.filter(
-              (s) =>
-                s.title.toLowerCase().includes(query) ||
-                s.title_zh.toLowerCase().includes(query) ||
-                s.keywords.some((k) => k.toLowerCase().includes(query)) ||
-                s.id.toLowerCase().includes(query),
-            );
+  function setActiveCat(cat) {
+    activeCat = cat;
+    var buttons = catList.querySelectorAll('.cat-btn');
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('active');
+    }
+    var target = catList.querySelector('[data-cat="' + cat + '"]');
+    if (target) target.classList.add('active');
+    render();
+  }
 
-          const container = document.getElementById("results");
-          if (!filtered.length) {
-            container.innerHTML =
-              '<div class="empty"><div class="icon">&#x1F50E;</div>No matching skills found</div>';
-            return;
+  // Init
+  fetch('catalog/skills.json')
+    .then(function(resp) { return resp.json(); })
+    .then(function(data) {
+      skills = data;
+      searchInput = document.getElementById('search');
+      catList = document.getElementById('cat-list');
+
+      // Stats
+      var active = skills.filter(function(s) { return s.status === 'active'; });
+      var categories = [];
+      for (var i = 0; i < skills.length; i++) {
+        for (var j = 0; j < skills[i].category.length; j++) {
+          if (categories.indexOf(skills[i].category[j]) === -1) {
+            categories.push(skills[i].category[j]);
           }
-
-          // Group filtered results by primary category
-          const fg = {};
-          for (const s of filtered) {
-            const c = s.category[0] || "uncategorized";
-            if (!fg[c]) fg[c] = [];
-            fg[c].push(s);
-          }
-
-          let html = "";
-          for (const [cat, items] of Object.entries(fg)) {
-            html += `<div class="section-title">${capitalize(cat)}</div><div class="card-list">`;
-            for (const s of items) {
-              html += `
-          <div class="card" onclick="window.open('${s.path}/skill.md', '_blank')">
-            <div class="card-header">
-              <span class="card-name">${escape(s.title)}</span>
-              <span class="card-zh">${escape(s.title_zh)}</span>
-              <span class="card-status ${s.status}">${s.status}</span>
-            </div>
-            <div class="card-desc">${escape(s.keywords.join(" · "))}</div>
-            <div class="card-tags">
-              ${s.category.map((c) => `<span class="tag">${escape(c)}</span>`).join("")}
-              ${s.keywords
-                .slice(0, 4)
-                .map((k) => `<span class="tag">${escape(k)}</span>`)
-                .join("")}
-            </div>
-          </div>`;
-            }
-            html += "</div>";
-          }
-          container.innerHTML = html;
         }
+      }
+      document.getElementById('stat-total').textContent = skills.length;
+      document.getElementById('stat-categories').textContent = categories.length;
+      document.getElementById('stat-active').textContent = active.length;
 
-        // ── Events ──
-        catList.addEventListener("click", (e) => {
-          const btn = e.target.closest(".cat-btn");
-          if (!btn) return;
-          activeCat = btn.dataset.cat;
-          catList
-            .querySelectorAll(".cat-btn")
-            .forEach((b) => b.classList.remove("active"));
-          btn.classList.add("active");
-          render();
+      // Group by primary category
+      var grouped = {};
+      for (var i = 0; i < skills.length; i++) {
+        var cat = skills[i].category[0] || 'uncategorized';
+        if (!grouped[cat]) grouped[cat] = [];
+        grouped[cat].push(skills[i]);
+      }
+
+      // Sidebar buttons
+      var li = document.createElement('li');
+      li.innerHTML = '<button class="cat-btn active" data-cat="all">All<span class="cat-count">' + skills.length + '</span></button>';
+      catList.appendChild(li);
+
+      var catKeys = Object.keys(grouped);
+      for (var i = 0; i < catKeys.length; i++) {
+        var cat = catKeys[i];
+        var items = grouped[cat];
+        var li2 = document.createElement('li');
+        li2.innerHTML = '<button class="cat-btn" data-cat="' + cat + '">' + capitalize(cat) + '<span class="cat-count">' + items.length + '</span></button>';
+        catList.appendChild(li2);
+      }
+
+      // Category click — attach directly to each button
+      var buttons = catList.querySelectorAll('.cat-btn');
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function() {
+          setActiveCat(this.getAttribute('data-cat'));
         });
-        searchInput.addEventListener("input", render);
-
-        render();
-      })();
-
-      function capitalize(s) {
-        return s.charAt(0).toUpperCase() + s.slice(1);
       }
-      function escape(s) {
-        const d = document.createElement("div");
-        d.textContent = s;
-        return d.innerHTML;
-      }
-    </script>
-  </body>
+
+      // Search
+      searchInput.addEventListener('input', render);
+
+      render();
+    })
+    .catch(function(err) {
+      document.getElementById('results').innerHTML = '<div class="empty"><div class="icon">&#x26A0;</div><p>Failed to load skills: ' + err.message + '</p></div>';
+    });
+})();
+</script>
+</body>
 </html>
