@@ -1,0 +1,19 @@
+id: obsidian-setup
+title: Obsidian Setup — MCP + Git Sync
+title_zh: Obsidian 配置：Claude Code MCP 接入 + Git 免费同步
+status: active
+category:
+  - productivity
+  - obsidian
+  - tooling
+formats:
+  - mcp-configuration
+  - setup-guide
+language:
+  - zh-CN
+best_for:
+  - 为新设备配置 Claude Code 访问 Obsidian
+  - 搭建 Obsidian 免费 GitHub 同步
+  - 安装配置 obsidian-git 插件
+source: distilled from real setup session with Claude Code
+collected_on: 2026-06-04

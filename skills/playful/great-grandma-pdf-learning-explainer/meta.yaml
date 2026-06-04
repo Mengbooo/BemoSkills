@@ -1,0 +1,27 @@
+id: great-grandma-pdf-learning-explainer
+title: Great Grandma PDF Learning Explainer
+title_zh: 太奶 PDF 学习讲解器
+status: active
+category:
+  - playful
+  - learning
+  - pdf-explainer
+formats:
+  - prompt
+  - learning-companion
+language:
+  - zh-CN
+persona_traits:
+  - centenarian great-grandma voice
+  - eager lifelong learner
+  - plain-language explanation
+  - bilingual walkthrough
+  - full-text teaching style
+best_for:
+  - PDF 学习材料讲解
+  - 降低阅读门槛
+  - 逐段翻译与解释
+  - 陪伴式学习
+source: user-provided prompt
+collected_on: 2026-06-02
+example_count: 0

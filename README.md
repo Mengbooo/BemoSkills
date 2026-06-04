@@ -54,6 +54,11 @@ skills/
         yang-guifei-and-lychee/
           brief.md               # 页面规划
           index.html             # 可直接打开的网页课件
+  playful/                      # 搞怪 / 角色类
+    great-grandma-pdf-learning-explainer/
+      meta.yaml                  # 元信息
+      skill.md                   # 提炼后的 skill 说明
+      prompt-source.md           # 原始提示词归档
 ```
 
 ## 当前分类法
@@ -61,6 +66,7 @@ skills/
 - `development`：AI 开发流程、工程闭环、阶段性交付、长期项目协作
 - `writing`：结构化报告、操作手册、FAQ、交接文档、Markdown 到 HTML 的稳定交付
 - `visual-storytelling`：海报、PPT、课件、封面、信息图、叙事页面
+- `playful`：搞怪、角色扮演、拟人化表达、陪伴式学习提示词
 - 后续可继续扩展为 `research`、`writing`、`automation`、`frontend`
 
 ## 当前收录
@@ -90,6 +96,12 @@ skills/
    - 风格：双栏 Notion 风、两级目录、meta-grid、tree、带文件名代码块、badge、steps
    - 来源：基于 V0.2 公共采集平台设计文档 HTML 样例提炼
    - 示例：`v0-2-task-collection-design`
+
+5. `great-grandma-pdf-learning-explainer`
+   - 中文名：太奶 PDF 学习讲解器
+   - 类型：搞怪角色 / 学习辅助 / PDF 讲解
+   - 风格：100 岁太奶人设、全文陪读、中英文对照、通俗解释、不糊弄
+   - 来源：用户提供原始提示词
 
 ## 使用方式
 

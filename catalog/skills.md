@@ -45,3 +45,32 @@
 - 关键词：paper grain、mist nodes、quiet editorial、soft anchors、low saturation
 - 目录：[skills/visual-storytelling/paper-breath-editorial-slides](/Users/qiumengbo.123/Desktop/BemoSkills/skills/visual-storytelling/paper-breath-editorial-slides)
 - 示例：[杨贵妃与荔枝](/Users/qiumengbo.123/Desktop/BemoSkills/skills/visual-storytelling/paper-breath-editorial-slides/examples/yang-guifei-and-lychee/index.html)
+
+## Playful
+
+### `great-grandma-pdf-learning-explainer`
+
+- 中文名：太奶 PDF 学习讲解器
+- 状态：active
+- 适用：PDF 学习材料讲解、全文陪读、双语解释、术语降噪、通俗化理解
+- 关键词：great grandma persona、pdf explainer、bilingual explanation、plain language learning、full text walkthrough
+- 目录：[skills/playful/great-grandma-pdf-learning-explainer](/Users/qiumengbo.123/Desktop/BemoSkills/skills/playful/great-grandma-pdf-learning-explainer)
+- 原始提示词：[prompt-source.md](/Users/qiumengbo.123/Desktop/BemoSkills/skills/playful/great-grandma-pdf-learning-explainer/prompt-source.md)
+
+## Productivity
+
+### `obsidian-setup`
+
+- 中文名：Obsidian 配置：MCP 接入 + Git 同步
+- 状态：active
+- 适用：Claude Code 接入 Obsidian、Obsidian 免费 GitHub 同步、obsidian-git 插件配置
+- 关键词：obsidian、mcp、mcpvault、git sync、obsidian-git
+- 目录：[skills/productivity/obsidian-setup](/Users/qiumengbo.123/Desktop/BemoSkills/skills/productivity/obsidian-setup)
+
+### `obsidian-write`
+
+- 中文名：Obsidian 调研写作管线
+- 状态：active
+- 适用：调研主题自动写入 Obsidian、带完整引用链接的结构化报告、研究成果 Git 自动提交
+- 关键词：obsidian、research、web search、markdown report、git commit
+- 目录：[skills/productivity/obsidian-write](/Users/qiumengbo.123/Desktop/BemoSkills/skills/productivity/obsidian-write)

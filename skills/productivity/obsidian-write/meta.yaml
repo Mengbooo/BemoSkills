@@ -1,0 +1,22 @@
+id: obsidian-write
+title: Obsidian Research & Write Pipeline
+title_zh: Obsidian 调研写作管线：搜索 → 综合 → 写入 → 提交
+status: active
+category:
+  - productivity
+  - obsidian
+  - research
+  - writing
+formats:
+  - web-research
+  - markdown-report
+  - obsidian-note
+language:
+  - zh-CN
+  - en
+best_for:
+  - 调研主题并自动写入 Obsidian
+  - 生成带完整引用链接的结构化报告
+  - 研究结果自动提交到 GitHub
+source: distilled from real research workflow with Claude Code
+collected_on: 2026-06-04
