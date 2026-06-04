@@ -100,6 +100,7 @@
 <body>
 <div class="topbar">
   <a href="index.html" class="back-btn">← Back to skills</a>
+  <button id="copy-btn" class="copy-btn" style="display:none;margin-left:auto;padding:6px 14px;background:var(--surface);border:1px solid var(--border);color:var(--text);border-radius:6px;cursor:pointer;font-size:13px;font-family:inherit;" onclick="(function(){navigator.clipboard.writeText(window._rawMd||'').then(function(){var b=document.getElementById('copy-btn');b.textContent='Copied!';setTimeout(function(){b.textContent='Copy Source'},1500);});})()">Copy Source</button>
 </div>
 <div class="container" id="app"><div class="loading">Loading...</div></div>
 <footer class="footer">
@@ -112,17 +113,24 @@
 
   function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
-  Promise.all([
-    fetch('catalog/skills.json').then(function(r) { return r.json(); }),
-    fetch('skills/' + id.replace(/-/g, '/') + '/skill.md').then(function(r) { return r.text(); })
-  ]).then(function(results) {
-    var skills = results[0];
-    var mdRaw = results[1];
-    var skill = null;
-    for (var i = 0; i < skills.length; i++) {
-      if (skills[i].id === id) { skill = skills[i]; break; }
-    }
-    if (!skill) { document.getElementById('app').innerHTML = '<div class="loading">Skill not found in catalog. <a href="index.html">Back</a></div>'; return; }
+  // First get catalog to find the correct path, then fetch skill.md
+  fetch('catalog/skills.json')
+    .then(function(r) { return r.json(); })
+    .then(function(skills) {
+      var skill = null;
+      for (var i = 0; i < skills.length; i++) {
+        if (skills[i].id === id) { skill = skills[i]; break; }
+      }
+      if (!skill) { throw new Error('Skill not found in catalog'); }
+      return fetch(skill.path + '/skill.md')
+        .then(function(r) { return r.text(); })
+        .then(function(mdRaw) { return {skill: skill, mdRaw: mdRaw}; });
+    })
+    .then(function(results) {
+    var skill = results.skill;
+    var mdRaw = results.mdRaw;
+    window._rawMd = mdRaw;
+    document.getElementById('copy-btn').style.display = 'block';
 
     // Parse frontmatter from skill.md
     var body = mdRaw;
@@ -165,7 +173,7 @@
     }
     out += '</div>';
     if (skill.best_for || (skill.keywords && skill.keywords.length)) {
-      var scenarios = skill.best_for || ((skill.title_zh || '') + ' — ' + (skill.keywords || []).join('、'));
+      var kwStr = (skill.keywords || []).join('、'); var scenarios = skill.best_for || ((skill.title_zh || '') + ' — ' + kwStr);
       out += '<div class="skill-bestfor"><h4>Best For</h4><ul><li>' + esc(scenarios) + '</li></ul></div>';
     }
     out += '</div>';
