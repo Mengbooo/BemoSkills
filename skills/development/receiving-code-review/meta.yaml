@@ -1,0 +1,17 @@
+id: receiving-code-review
+title: Receiving Code Review
+title_zh: 代码评审响应
+status: active
+category:
+- development
+formats:
+- markdown
+language:
+- zh-CN
+- en
+best_for:
+- 响应 code review 反馈
+- 验证评审建议
+- 技术质疑回应
+source: distilled from real workflow with Claude Code
+collected_on: '2026-06-05'

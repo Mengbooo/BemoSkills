@@ -1,17 +1,16 @@
-id: obsidian-setup
-title: Obsidian Setup
-title_zh: Obsidian 配置指南
+id: bemoskill-generator
+title: Bemoskill Generator
+title_zh: BemoSkill 生成器
 status: active
 category:
-- productivity
+- development
 formats:
 - markdown
 language:
 - zh-CN
 - en
 best_for:
-- 配置 Obsidian MCP
-- Obsidian GitHub 同步
-- Obsidian 免费同步
+- 生成新的 BemoSkill
+- 添加技能到 BemoSkills 目录
 source: distilled from real workflow with Claude Code
 collected_on: '2026-06-05'

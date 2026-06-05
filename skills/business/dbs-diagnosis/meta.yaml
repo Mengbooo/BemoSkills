@@ -1,17 +1,17 @@
-id: obsidian-setup
-title: Obsidian Setup
-title_zh: Obsidian 配置指南
+id: dbs-diagnosis
+title: Dbs Diagnosis
+title_zh: 商业模式诊断
 status: active
 category:
-- productivity
+- business
 formats:
 - markdown
 language:
 - zh-CN
 - en
 best_for:
-- 配置 Obsidian MCP
-- Obsidian GitHub 同步
-- Obsidian 免费同步
+- 商业模式诊断
+- 业务问题分析
+- 创业方向评估
 source: distilled from real workflow with Claude Code
 collected_on: '2026-06-05'

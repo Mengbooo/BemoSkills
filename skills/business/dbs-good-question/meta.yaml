@@ -1,0 +1,17 @@
+id: dbs-good-question
+title: Dbs Good Question
+title_zh: 好问题生成器
+status: active
+category:
+- business
+formats:
+- markdown
+language:
+- zh-CN
+- en
+best_for:
+- 把模糊问题说清楚
+- Agent 可解性评估
+- 问题说明书生成
+source: distilled from real workflow with Claude Code
+collected_on: '2026-06-05'

@@ -1,17 +1,17 @@
-id: obsidian-setup
-title: Obsidian Setup
-title_zh: Obsidian 配置指南
+id: dbs-xhs-title
+title: Dbs Xhs Title
+title_zh: 小红书标题公式
 status: active
 category:
-- productivity
+- writing
 formats:
 - markdown
 language:
 - zh-CN
 - en
 best_for:
-- 配置 Obsidian MCP
-- Obsidian GitHub 同步
-- Obsidian 免费同步
+- 小红书标题优化
+- 从75个爆款公式选择
+- 标题 A/B 测试
 source: distilled from real workflow with Claude Code
 collected_on: '2026-06-05'

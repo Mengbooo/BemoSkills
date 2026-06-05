@@ -1,0 +1,17 @@
+id: dbs-chatroom-austrian
+title: Dbs Chatroom Austrian
+title_zh: 奥派经济学聊天室
+status: active
+category:
+- business
+formats:
+- markdown
+language:
+- zh-CN
+- en
+best_for:
+- 奥派经济学分析
+- 哈耶克×米塞斯视角
+- 经济政策讨论
+source: distilled from real workflow with Claude Code
+collected_on: '2026-06-05'

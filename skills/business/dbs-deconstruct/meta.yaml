@@ -1,17 +1,17 @@
-id: obsidian-setup
-title: Obsidian Setup
-title_zh: Obsidian 配置指南
+id: dbs-deconstruct
+title: Dbs Deconstruct
+title_zh: 概念拆解
 status: active
 category:
-- productivity
+- business
 formats:
 - markdown
 language:
 - zh-CN
 - en
 best_for:
-- 配置 Obsidian MCP
-- Obsidian GitHub 同步
-- Obsidian 免费同步
+- 拆解模糊概念
+- 商业概念原子化
+- 维特根斯坦式分析
 source: distilled from real workflow with Claude Code
 collected_on: '2026-06-05'

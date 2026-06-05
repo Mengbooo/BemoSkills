@@ -1,17 +1,17 @@
-id: obsidian-setup
-title: Obsidian Setup
-title_zh: Obsidian 配置指南
+id: dbs-benchmark
+title: Dbs Benchmark
+title_zh: 对标分析
 status: active
 category:
-- productivity
+- business
 formats:
 - markdown
 language:
 - zh-CN
 - en
 best_for:
-- 配置 Obsidian MCP
-- Obsidian GitHub 同步
-- Obsidian 免费同步
+- 找商业对标
+- 竞品分析
+- 模仿对象选择
 source: distilled from real workflow with Claude Code
 collected_on: '2026-06-05'

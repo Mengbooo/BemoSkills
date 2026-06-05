@@ -1,6 +1,6 @@
-id: obsidian-write
-title: Obsidian Write
-title_zh: Obsidian 调研写作
+id: dbs
+title: Dbs
+title_zh: dontbesilent 商业工具箱
 status: active
 category:
 - productivity
@@ -10,8 +10,8 @@ language:
 - zh-CN
 - en
 best_for:
-- 调研后写入 Obsidian
-- 网页搜索+报告合成
-- 主题研究存档
+- 商业模式问题诊断
+- 内容策略分析
+- 个人决策辅助
 source: distilled from real workflow with Claude Code
 collected_on: '2026-06-05'

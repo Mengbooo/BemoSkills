@@ -1,17 +1,17 @@
-id: obsidian-setup
-title: Obsidian Setup
-title_zh: Obsidian 配置指南
+id: find-skills
+title: Find Skills
+title_zh: 技能发现
 status: active
 category:
-- productivity
+- development
 formats:
 - markdown
 language:
 - zh-CN
 - en
 best_for:
-- 配置 Obsidian MCP
-- Obsidian GitHub 同步
-- Obsidian 免费同步
+- 发现可安装技能
+- 扩展 AI 能力
+- 找特定功能技能
 source: distilled from real workflow with Claude Code
 collected_on: '2026-06-05'

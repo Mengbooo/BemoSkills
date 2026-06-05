@@ -1,6 +1,6 @@
-id: obsidian-write
-title: Obsidian Write
-title_zh: Obsidian 调研写作
+id: dbs-save
+title: Dbs Save
+title_zh: 诊断状态存档
 status: active
 category:
 - productivity
@@ -10,8 +10,8 @@ language:
 - zh-CN
 - en
 best_for:
-- 调研后写入 Obsidian
-- 网页搜索+报告合成
-- 主题研究存档
+- 保存诊断状态
+- 跨会话记忆
+- 关键结论存档
 source: distilled from real workflow with Claude Code
 collected_on: '2026-06-05'

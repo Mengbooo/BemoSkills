@@ -1,17 +1,17 @@
-id: obsidian-setup
-title: Obsidian Setup
-title_zh: Obsidian 配置指南
+id: dbs-chatroom
+title: Dbs Chatroom
+title_zh: 定向聊天室
 status: active
 category:
-- productivity
+- business
 formats:
 - markdown
 language:
 - zh-CN
 - en
 best_for:
-- 配置 Obsidian MCP
-- Obsidian GitHub 同步
-- Obsidian 免费同步
+- 多角色讨论
+- 专家对话模拟
+- 定向话题分析
 source: distilled from real workflow with Claude Code
 collected_on: '2026-06-05'

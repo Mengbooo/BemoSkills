@@ -1,0 +1,17 @@
+id: longform-narrative-writer
+title: Longform Narrative Writer
+title_zh: 长文叙事写作
+status: active
+category:
+- writing
+formats:
+- markdown
+language:
+- zh-CN
+- en
+best_for:
+- 写深度经验复盘
+- 产品项目事后分析
+- 第一人称长文叙事
+source: distilled from real workflow with Claude Code
+collected_on: '2026-06-05'

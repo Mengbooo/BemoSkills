@@ -1,17 +1,17 @@
-id: obsidian-setup
-title: Obsidian Setup
-title_zh: Obsidian 配置指南
+id: dbs-action
+title: Dbs Action
+title_zh: 执行力诊断
 status: active
 category:
-- productivity
+- business
 formats:
 - markdown
 language:
 - zh-CN
 - en
 best_for:
-- 配置 Obsidian MCP
-- Obsidian GitHub 同步
-- Obsidian 免费同步
+- 诊断执行力问题
+- 解决拖延症
+- 知道该做什么但就是不做
 source: distilled from real workflow with Claude Code
 collected_on: '2026-06-05'

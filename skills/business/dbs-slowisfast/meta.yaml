@@ -1,0 +1,17 @@
+id: dbs-slowisfast
+title: Dbs Slowisfast
+title_zh: 慢就是快诊断
+status: active
+category:
+- business
+formats:
+- markdown
+language:
+- zh-CN
+- en
+best_for:
+- 找更慢但长期更快的方法
+- 用摩擦建造资产
+- 避免快决策陷阱
+source: distilled from real workflow with Claude Code
+collected_on: '2026-06-05'

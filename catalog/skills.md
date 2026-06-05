@@ -1,84 +1,252 @@
-# Skills Catalog
+# BemoSkills Catalog
 
-## Development
+> Auto-generated on 2026-06-05 · 30 skills
 
-### `structured-ai-dev-workflow`
-
-- 中文名：AI 结构化开发闭环
-- 状态：active
-- 适用：中大型功能开发、AI coding、阶段性交付、工程记忆沉淀
-- 关键词：demand、research、plan、phase task、commit、worklog
-- 目录：[skills/development/structured-ai-dev-workflow](skills/development/structured-ai-dev-workflow)
-- 说明：[README.md](skills/development/structured-ai-dev-workflow/README.md)
-
-## Writing
-
-### `structured-report-md-to-html`
-
-- 中文名：结构化报告 Markdown 转 HTML
-- 状态：active
-- 适用：项目进展报告、交接文档、部署手册、验证记录、FAQ 排障文档
-- 关键词：markdown to html、structured report、handoff document、single file html、toc callout faq
-- 目录：[skills/writing/structured-report-md-to-html](skills/writing/structured-report-md-to-html)
-- 说明：[README.md](skills/writing/structured-report-md-to-html/README.md)
-- 模板：[report-template.html](skills/writing/structured-report-md-to-html/assets/report-template.html)
-- 示例：[embodio-platform-docker-progress-report](skills/writing/structured-report-md-to-html/examples/embodio-platform-docker-progress-report/index.html)
-
-### `notion-style-design-spec-md-to-html`
-
-- 中文名：Notion 风设计规格 Markdown 转 HTML
-- 状态：active
-- 适用：设计规格说明、前后端对接文档、API 契约文档、模块实施说明
-- 关键词：notion style、design spec、two-level toc、code block header、badge steps tree
-- 目录：[skills/writing/notion-style-design-spec-md-to-html](skills/writing/notion-style-design-spec-md-to-html)
-- 说明：[README.md](skills/writing/notion-style-design-spec-md-to-html/README.md)
-- 模板：[design-spec-template.html](skills/writing/notion-style-design-spec-md-to-html/assets/design-spec-template.html)
-- 示例：[v0-2-task-collection-design](skills/writing/notion-style-design-spec-md-to-html/examples/v0-2-task-collection-design/index.html)
-
-## Visual Storytelling
-
-### `paper-breath-editorial-slides`
-
-- 中文名：纸面呼吸感叙事课件
-- 状态：archived
-- 适用：PPT、课件、海报封面、报告页、社交卡片、轻诗性信息图
-- 关键词：paper grain、mist nodes、quiet editorial、soft anchors、low saturation
-- 目录：[skills/visual-storytelling/paper-breath-editorial-slides](skills/visual-storytelling/paper-breath-editorial-slides)
-- 示例：[杨贵妃与荔枝](skills/visual-storytelling/paper-breath-editorial-slides/examples/yang-guifei-and-lychee/index.html)
-
-## Playful
-
-### `great-grandma-pdf-learning-explainer`
-
-- 中文名：太奶 PDF 学习讲解器
-- 状态：active
-- 适用：PDF 学习材料讲解、全文陪读、双语解释、术语降噪、通俗化理解
-- 关键词：great grandma persona、pdf explainer、bilingual explanation、plain language learning、full text walkthrough
-- 目录：[skills/playful/great-grandma-pdf-learning-explainer](skills/playful/great-grandma-pdf-learning-explainer)
-- 原始提示词：[prompt-source.md](skills/playful/great-grandma-pdf-learning-explainer/prompt-source.md)
-
-## Productivity
-
-### `obsidian-setup`
-
-- 中文名：Obsidian 配置：MCP 接入 + Git 同步
-- 状态：active
-- 适用：Claude Code 接入 Obsidian、Obsidian 免费 GitHub 同步、obsidian-git 插件配置
-- 关键词：obsidian、mcp、mcpvault、git sync、obsidian-git
-- 目录：[skills/productivity/obsidian-setup](skills/productivity/obsidian-setup)
-
-### `obsidian-write`
-
-- 中文名：Obsidian 调研写作管线
-- 状态：active
-- 适用：调研主题自动写入 Obsidian、带完整引用链接的结构化报告、研究成果 Git 自动提交
-- 关键词：obsidian、research、web search、markdown report、git commit
-- 目录：[skills/productivity/obsidian-write](skills/productivity/obsidian-write)
+## 🛠 Development
 
 ### `bemoskill-generator`
 
 - 中文名：BemoSkill 生成器
 - 状态：active
-- 适用：为新工作流创建标准化 BemoSkill、自动生成 meta.yaml 和 skill.md、更新 catalog 索引
-- 关键词：bemoskill、skill generator、meta.yaml、catalog
-- 目录：[skills/productivity/bemoskill-generator](skills/productivity/bemoskill-generator)
+- 适用：生成新的 BemoSkill、添加技能到 BemoSkills 目录
+- 关键词：skill、bemoskill、catalog、技能生成、meta.yaml
+- 目录：[skills/development/bemoskill-generator](skills/development/bemoskill-generator)
+
+### `find-skills`
+
+- 中文名：技能发现
+- 状态：active
+- 适用：发现可安装技能、扩展 AI 能力、找特定功能技能
+- 关键词：skill discovery、install、技能发现、安装、扩展
+- 目录：[skills/development/find-skills](skills/development/find-skills)
+
+### `receiving-code-review`
+
+- 中文名：代码评审响应
+- 状态：active
+- 适用：响应 code review 反馈、验证评审建议、技术质疑回应
+- 关键词：code review、feedback、代码评审、反馈响应
+- 目录：[skills/development/receiving-code-review](skills/development/receiving-code-review)
+
+## ✍️ Writing
+
+### `blog-writer`
+
+- 中文名：BemoDB 博客写作
+- 状态：active
+- 适用：写技术博客、写中文深度文章、BemoDB 风格内容创作
+- 关键词：blog、writing、Chinese、博客、写作
+- 目录：[skills/writing/blog-writer](skills/writing/blog-writer)
+
+### `dbs-ai-check`
+
+- 中文名：AI 写作特征识别
+- 状态：active
+- 适用：检测 AI 写作痕迹、优化文案真实性、识别 AI 生成特征
+- 关键词：AI detection、writing fingerprint、AI写作、检测、AI味
+- 目录：[skills/writing/dbs-ai-check](skills/writing/dbs-ai-check)
+
+### `dbs-content`
+
+- 中文名：内容创作诊断
+- 状态：active
+- 适用：内容策略诊断、选题优化、文案效果评估
+- 关键词：content creation、diagnosis、内容创作、诊断、选题
+- 目录：[skills/writing/dbs-content](skills/writing/dbs-content)
+
+### `dbs-hook`
+
+- 中文名：短视频开头优化
+- 状态：active
+- 适用：短视频开头优化、提升完播率、hook 诊断
+- 关键词：short video、opening、hook、短视频、开头
+- 目录：[skills/writing/dbs-hook](skills/writing/dbs-hook)
+
+### `dbs-xhs-title`
+
+- 中文名：小红书标题公式
+- 状态：active
+- 适用：小红书标题优化、从75个爆款公式选择、标题 A/B 测试
+- 关键词：小红书、标题、爆款公式、XHS、title formula
+- 目录：[skills/writing/dbs-xhs-title](skills/writing/dbs-xhs-title)
+
+### `longform-narrative-writer`
+
+- 中文名：长文叙事写作
+- 状态：active
+- 适用：写深度经验复盘、产品项目事后分析、第一人称长文叙事
+- 关键词：长文、叙事、第一人称、复盘、置身钉内
+- 目录：[skills/writing/longform-narrative-writer](skills/writing/longform-narrative-writer)
+
+## ⚡ Productivity
+
+### `dbs`
+
+- 中文名：dontbesilent 商业工具箱
+- 状态：active
+- 适用：商业模式问题诊断、内容策略分析、个人决策辅助
+- 关键词：dontbesilent、business、toolkit、商业、工具箱
+- 目录：[skills/productivity/dbs](skills/productivity/dbs)
+
+### `dbs-report`
+
+- 中文名：诊断报告生成
+- 状态：active
+- 适用：诊断报告打包、多轮诊断合并、合伙人汇报材料
+- 关键词：report、diagnosis merge、报告、打包、诊断合并
+- 目录：[skills/productivity/dbs-report](skills/productivity/dbs-report)
+
+### `dbs-restore`
+
+- 中文名：诊断状态恢复
+- 状态：active
+- 适用：恢复上次诊断状态、续接之前分析、跨会话继续工作
+- 关键词：restore、snapshot、恢复、续上、上次诊断
+- 目录：[skills/productivity/dbs-restore](skills/productivity/dbs-restore)
+
+### `dbs-save`
+
+- 中文名：诊断状态存档
+- 状态：active
+- 适用：保存诊断状态、跨会话记忆、关键结论存档
+- 关键词：save、snapshot、存档、保存、记住
+- 目录：[skills/productivity/dbs-save](skills/productivity/dbs-save)
+
+### `last30days`
+
+- 中文名：30天舆情研究
+- 状态：active
+- 适用：舆情研究、社交媒体分析、话题热度追踪
+- 关键词：research、social media、舆情、社交媒体、Reddit
+- 目录：[skills/productivity/last30days](skills/productivity/last30days)
+
+### `obsidian-setup`
+
+- 中文名：Obsidian 配置指南
+- 状态：active
+- 适用：配置 Obsidian MCP、Obsidian GitHub 同步、Obsidian 免费同步
+- 关键词：Obsidian、MCP、GitHub sync、配置、同步
+- 目录：[skills/productivity/obsidian-setup](skills/productivity/obsidian-setup)
+
+### `obsidian-toread`
+
+- 中文名：Obsidian 待读管理
+- 状态：active
+- 适用：添加到待读列表、保存文章稍后阅读、管理阅读清单
+- 关键词：Obsidian、reading list、to-read、待读、阅读清单
+- 目录：[skills/productivity/obsidian-toread](skills/productivity/obsidian-toread)
+
+### `obsidian-write`
+
+- 中文名：Obsidian 调研写作
+- 状态：active
+- 适用：调研后写入 Obsidian、网页搜索+报告合成、主题研究存档
+- 关键词：Obsidian、research、writing、调研、写作
+- 目录：[skills/productivity/obsidian-write](skills/productivity/obsidian-write)
+
+## 💼 Business Strategy
+
+### `dbs-action`
+
+- 中文名：执行力诊断
+- 状态：active
+- 适用：诊断执行力问题、解决拖延症、知道该做什么但就是不做
+- 关键词：execution、procrastination、Adler、执行力、拖延
+- 目录：[skills/business/dbs-action](skills/business/dbs-action)
+
+### `dbs-agent-migration`
+
+- 中文名：Agent 工作台迁移
+- 状态：active
+- 适用：迁移到 Claude Code、迁移到 Codex、统一 AGENTS.md
+- 关键词：agent、migration、Claude Code、Codex、Grok
+- 目录：[skills/business/dbs-agent-migration](skills/business/dbs-agent-migration)
+
+### `dbs-benchmark`
+
+- 中文名：对标分析
+- 状态：active
+- 适用：找商业对标、竞品分析、模仿对象选择
+- 关键词：benchmark、competitor analysis、对标、竞品、模仿
+- 目录：[skills/business/dbs-benchmark](skills/business/dbs-benchmark)
+
+### `dbs-chatroom`
+
+- 中文名：定向聊天室
+- 状态：active
+- 适用：多角色讨论、专家对话模拟、定向话题分析
+- 关键词：chatroom、multi-role、experts、聊天室、多角色
+- 目录：[skills/business/dbs-chatroom](skills/business/dbs-chatroom)
+
+### `dbs-chatroom-austrian`
+
+- 中文名：奥派经济学聊天室
+- 状态：active
+- 适用：奥派经济学分析、哈耶克×米塞斯视角、经济政策讨论
+- 关键词：Austrian economics、Hayek、Mises、奥派、哈耶克
+- 目录：[skills/business/dbs-chatroom-austrian](skills/business/dbs-chatroom-austrian)
+
+### `dbs-content-system`
+
+- 中文名：内容结构化系统
+- 状态：active
+- 适用：搭建内容资产工程、旧内容结构化、本地知识库建设
+- 关键词：content structure、knowledge base、内容结构化、知识库、资产工程
+- 目录：[skills/business/dbs-content-system](skills/business/dbs-content-system)
+
+### `dbs-decision`
+
+- 中文名：个人决策系统
+- 状态：active
+- 适用：长期决策跟踪、个人决策系统搭建、决策结果回填
+- 关键词：decision system、tracking、决策系统、长期跟踪、快照
+- 目录：[skills/business/dbs-decision](skills/business/dbs-decision)
+
+### `dbs-deconstruct`
+
+- 中文名：概念拆解
+- 状态：active
+- 适用：拆解模糊概念、商业概念原子化、维特根斯坦式分析
+- 关键词：deconstruction、Wittgenstein、concept、拆解、维特根斯坦
+- 目录：[skills/business/dbs-deconstruct](skills/business/dbs-deconstruct)
+
+### `dbs-diagnosis`
+
+- 中文名：商业模式诊断
+- 状态：active
+- 适用：商业模式诊断、业务问题分析、创业方向评估
+- 关键词：business model、diagnosis、商业模式、诊断、创业
+- 目录：[skills/business/dbs-diagnosis](skills/business/dbs-diagnosis)
+
+### `dbs-goal`
+
+- 中文名：目标清晰化
+- 状态：active
+- 适用：目标清晰化、模糊愿景转可执行计划、个人 IP 定位
+- 关键词：goal clarification、Wittgenstein、目标、清晰化、个人IP
+- 目录：[skills/business/dbs-goal](skills/business/dbs-goal)
+
+### `dbs-good-question`
+
+- 中文名：好问题生成器
+- 状态：active
+- 适用：把模糊问题说清楚、Agent 可解性评估、问题说明书生成
+- 关键词：problem brief、agent-solvable、好问题、Agent可解、问题说明书
+- 目录：[skills/business/dbs-good-question](skills/business/dbs-good-question)
+
+### `dbs-learning`
+
+- 中文名：交互式学习
+- 状态：active
+- 适用：交互式学习、按反馈调整深度、连续学习序列
+- 关键词：interactive learning、adaptive sequence、交互式学习、连续学习
+- 目录：[skills/business/dbs-learning](skills/business/dbs-learning)
+
+### `dbs-slowisfast`
+
+- 中文名：慢就是快诊断
+- 状态：active
+- 适用：找更慢但长期更快的方法、用摩擦建造资产、避免快决策陷阱
+- 关键词：slow is fast、friction、assets、慢就是快、摩擦
+- 目录：[skills/business/dbs-slowisfast](skills/business/dbs-slowisfast)
+

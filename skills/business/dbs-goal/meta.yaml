@@ -1,17 +1,17 @@
-id: obsidian-setup
-title: Obsidian Setup
-title_zh: Obsidian 配置指南
+id: dbs-goal
+title: Dbs Goal
+title_zh: 目标清晰化
 status: active
 category:
-- productivity
+- business
 formats:
 - markdown
 language:
 - zh-CN
 - en
 best_for:
-- 配置 Obsidian MCP
-- Obsidian GitHub 同步
-- Obsidian 免费同步
+- 目标清晰化
+- 模糊愿景转可执行计划
+- 个人 IP 定位
 source: distilled from real workflow with Claude Code
 collected_on: '2026-06-05'

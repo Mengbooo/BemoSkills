@@ -1,6 +1,6 @@
-id: obsidian-write
-title: Obsidian Write
-title_zh: Obsidian 调研写作
+id: dbs-restore
+title: Dbs Restore
+title_zh: 诊断状态恢复
 status: active
 category:
 - productivity
@@ -10,8 +10,8 @@ language:
 - zh-CN
 - en
 best_for:
-- 调研后写入 Obsidian
-- 网页搜索+报告合成
-- 主题研究存档
+- 恢复上次诊断状态
+- 续接之前分析
+- 跨会话继续工作
 source: distilled from real workflow with Claude Code
 collected_on: '2026-06-05'

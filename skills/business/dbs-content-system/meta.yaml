@@ -1,0 +1,17 @@
+id: dbs-content-system
+title: Dbs Content System
+title_zh: 内容结构化系统
+status: active
+category:
+- business
+formats:
+- markdown
+language:
+- zh-CN
+- en
+best_for:
+- 搭建内容资产工程
+- 旧内容结构化
+- 本地知识库建设
+source: distilled from real workflow with Claude Code
+collected_on: '2026-06-05'

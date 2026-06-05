@@ -1,125 +1,551 @@
 [
   {
-    "id": "structured-ai-dev-workflow",
-    "title": "Structured AI Dev Workflow",
-    "title_zh": "AI 结构化开发闭环",
+    "id": "bemoskill-generator",
+    "title": "Bemoskill Generator",
+    "title_zh": "BemoSkill 生成器",
     "status": "active",
-    "category": ["development", "workflow", "ai-coding"],
-    "keywords": [
-      "demand",
-      "research",
-      "plan",
-      "phase task",
-      "commit",
-      "worklog"
+    "category": [
+      "development"
     ],
-    "path": "skills/development/structured-ai-dev-workflow",
+    "keywords": [
+      "skill",
+      "bemoskill",
+      "catalog",
+      "技能生成",
+      "meta.yaml"
+    ],
+    "path": "skills/development/bemoskill-generator",
     "examples": []
   },
   {
-    "id": "structured-report-md-to-html",
-    "title": "Structured Report Markdown To HTML",
-    "title_zh": "结构化报告 Markdown 转 HTML",
+    "id": "blog-writer",
+    "title": "Blog Writer",
+    "title_zh": "BemoDB 博客写作",
     "status": "active",
-    "category": ["writing", "reports", "html"],
-    "keywords": [
-      "markdown to html",
-      "structured report",
-      "handoff document",
-      "single file html",
-      "toc callout faq"
+    "category": [
+      "writing"
     ],
-    "path": "skills/writing/structured-report-md-to-html",
-    "examples": [
-      "skills/writing/structured-report-md-to-html/examples/embodio-platform-docker-progress-report/index.html"
-    ]
+    "keywords": [
+      "blog",
+      "writing",
+      "Chinese",
+      "博客",
+      "写作",
+      "BemoDB"
+    ],
+    "path": "skills/writing/blog-writer",
+    "examples": []
   },
   {
-    "id": "notion-style-design-spec-md-to-html",
-    "title": "Notion Style Design Spec Markdown To HTML",
-    "title_zh": "Notion 风设计规格 Markdown 转 HTML",
+    "id": "dbs",
+    "title": "Dbs",
+    "title_zh": "dontbesilent 商业工具箱",
     "status": "active",
-    "category": ["writing", "design-spec", "html"],
-    "keywords": [
-      "notion style",
-      "design spec",
-      "two-level toc",
-      "code block header",
-      "badge steps tree"
+    "category": [
+      "productivity"
     ],
-    "path": "skills/writing/notion-style-design-spec-md-to-html",
-    "examples": [
-      "skills/writing/notion-style-design-spec-md-to-html/examples/v0-2-task-collection-design/index.html"
-    ]
+    "keywords": [
+      "dontbesilent",
+      "business",
+      "toolkit",
+      "商业",
+      "工具箱"
+    ],
+    "path": "skills/productivity/dbs",
+    "examples": []
   },
   {
-    "id": "paper-breath-editorial-slides",
-    "title": "Paper Breath Editorial Slides",
-    "title_zh": "纸面呼吸感叙事课件",
-    "status": "archived",
-    "category": ["visual-storytelling", "slides", "courseware"],
-    "keywords": [
-      "paper grain",
-      "mist nodes",
-      "quiet editorial",
-      "soft anchors",
-      "low saturation"
+    "id": "dbs-action",
+    "title": "Dbs Action",
+    "title_zh": "执行力诊断",
+    "status": "active",
+    "category": [
+      "business"
     ],
-    "path": "skills/visual-storytelling/paper-breath-editorial-slides",
-    "examples": [
-      "skills/visual-storytelling/paper-breath-editorial-slides/examples/yang-guifei-and-lychee/index.html"
-    ]
+    "keywords": [
+      "execution",
+      "procrastination",
+      "Adler",
+      "执行力",
+      "拖延",
+      "阿德勒"
+    ],
+    "path": "skills/business/dbs-action",
+    "examples": []
   },
   {
-    "id": "great-grandma-pdf-learning-explainer",
-    "title": "Great Grandma PDF Learning Explainer",
-    "title_zh": "太奶 PDF 学习讲解器",
+    "id": "dbs-agent-migration",
+    "title": "Dbs Agent Migration",
+    "title_zh": "Agent 工作台迁移",
     "status": "active",
-    "category": ["playful", "learning", "pdf-explainer"],
-    "keywords": [
-      "great grandma persona",
-      "pdf explainer",
-      "bilingual explanation",
-      "plain language learning",
-      "full text walkthrough"
+    "category": [
+      "business"
     ],
-    "path": "skills/playful/great-grandma-pdf-learning-explainer",
+    "keywords": [
+      "agent",
+      "migration",
+      "Claude Code",
+      "Codex",
+      "Grok",
+      "AGENTS.md"
+    ],
+    "path": "skills/business/dbs-agent-migration",
+    "examples": []
+  },
+  {
+    "id": "dbs-ai-check",
+    "title": "Dbs Ai Check",
+    "title_zh": "AI 写作特征识别",
+    "status": "active",
+    "category": [
+      "writing"
+    ],
+    "keywords": [
+      "AI detection",
+      "writing fingerprint",
+      "AI写作",
+      "检测",
+      "AI味"
+    ],
+    "path": "skills/writing/dbs-ai-check",
+    "examples": []
+  },
+  {
+    "id": "dbs-benchmark",
+    "title": "Dbs Benchmark",
+    "title_zh": "对标分析",
+    "status": "active",
+    "category": [
+      "business"
+    ],
+    "keywords": [
+      "benchmark",
+      "competitor analysis",
+      "对标",
+      "竞品",
+      "模仿"
+    ],
+    "path": "skills/business/dbs-benchmark",
+    "examples": []
+  },
+  {
+    "id": "dbs-chatroom",
+    "title": "Dbs Chatroom",
+    "title_zh": "定向聊天室",
+    "status": "active",
+    "category": [
+      "business"
+    ],
+    "keywords": [
+      "chatroom",
+      "multi-role",
+      "experts",
+      "聊天室",
+      "多角色",
+      "专家"
+    ],
+    "path": "skills/business/dbs-chatroom",
+    "examples": []
+  },
+  {
+    "id": "dbs-chatroom-austrian",
+    "title": "Dbs Chatroom Austrian",
+    "title_zh": "奥派经济学聊天室",
+    "status": "active",
+    "category": [
+      "business"
+    ],
+    "keywords": [
+      "Austrian economics",
+      "Hayek",
+      "Mises",
+      "奥派",
+      "哈耶克",
+      "米塞斯"
+    ],
+    "path": "skills/business/dbs-chatroom-austrian",
+    "examples": []
+  },
+  {
+    "id": "dbs-content",
+    "title": "Dbs Content",
+    "title_zh": "内容创作诊断",
+    "status": "active",
+    "category": [
+      "writing"
+    ],
+    "keywords": [
+      "content creation",
+      "diagnosis",
+      "内容创作",
+      "诊断",
+      "选题"
+    ],
+    "path": "skills/writing/dbs-content",
+    "examples": []
+  },
+  {
+    "id": "dbs-content-system",
+    "title": "Dbs Content System",
+    "title_zh": "内容结构化系统",
+    "status": "active",
+    "category": [
+      "business"
+    ],
+    "keywords": [
+      "content structure",
+      "knowledge base",
+      "内容结构化",
+      "知识库",
+      "资产工程"
+    ],
+    "path": "skills/business/dbs-content-system",
+    "examples": []
+  },
+  {
+    "id": "dbs-decision",
+    "title": "Dbs Decision",
+    "title_zh": "个人决策系统",
+    "status": "active",
+    "category": [
+      "business"
+    ],
+    "keywords": [
+      "decision system",
+      "tracking",
+      "决策系统",
+      "长期跟踪",
+      "快照"
+    ],
+    "path": "skills/business/dbs-decision",
+    "examples": []
+  },
+  {
+    "id": "dbs-deconstruct",
+    "title": "Dbs Deconstruct",
+    "title_zh": "概念拆解",
+    "status": "active",
+    "category": [
+      "business"
+    ],
+    "keywords": [
+      "deconstruction",
+      "Wittgenstein",
+      "concept",
+      "拆解",
+      "维特根斯坦",
+      "概念"
+    ],
+    "path": "skills/business/dbs-deconstruct",
+    "examples": []
+  },
+  {
+    "id": "dbs-diagnosis",
+    "title": "Dbs Diagnosis",
+    "title_zh": "商业模式诊断",
+    "status": "active",
+    "category": [
+      "business"
+    ],
+    "keywords": [
+      "business model",
+      "diagnosis",
+      "商业模式",
+      "诊断",
+      "创业"
+    ],
+    "path": "skills/business/dbs-diagnosis",
+    "examples": []
+  },
+  {
+    "id": "dbs-goal",
+    "title": "Dbs Goal",
+    "title_zh": "目标清晰化",
+    "status": "active",
+    "category": [
+      "business"
+    ],
+    "keywords": [
+      "goal clarification",
+      "Wittgenstein",
+      "目标",
+      "清晰化",
+      "个人IP"
+    ],
+    "path": "skills/business/dbs-goal",
+    "examples": []
+  },
+  {
+    "id": "dbs-good-question",
+    "title": "Dbs Good Question",
+    "title_zh": "好问题生成器",
+    "status": "active",
+    "category": [
+      "business"
+    ],
+    "keywords": [
+      "problem brief",
+      "agent-solvable",
+      "好问题",
+      "Agent可解",
+      "问题说明书"
+    ],
+    "path": "skills/business/dbs-good-question",
+    "examples": []
+  },
+  {
+    "id": "dbs-hook",
+    "title": "Dbs Hook",
+    "title_zh": "短视频开头优化",
+    "status": "active",
+    "category": [
+      "writing"
+    ],
+    "keywords": [
+      "short video",
+      "opening",
+      "hook",
+      "短视频",
+      "开头",
+      "完播率"
+    ],
+    "path": "skills/writing/dbs-hook",
+    "examples": []
+  },
+  {
+    "id": "dbs-learning",
+    "title": "Dbs Learning",
+    "title_zh": "交互式学习",
+    "status": "active",
+    "category": [
+      "business"
+    ],
+    "keywords": [
+      "interactive learning",
+      "adaptive sequence",
+      "交互式学习",
+      "连续学习"
+    ],
+    "path": "skills/business/dbs-learning",
+    "examples": []
+  },
+  {
+    "id": "dbs-report",
+    "title": "Dbs Report",
+    "title_zh": "诊断报告生成",
+    "status": "active",
+    "category": [
+      "productivity"
+    ],
+    "keywords": [
+      "report",
+      "diagnosis merge",
+      "报告",
+      "打包",
+      "诊断合并"
+    ],
+    "path": "skills/productivity/dbs-report",
+    "examples": []
+  },
+  {
+    "id": "dbs-restore",
+    "title": "Dbs Restore",
+    "title_zh": "诊断状态恢复",
+    "status": "active",
+    "category": [
+      "productivity"
+    ],
+    "keywords": [
+      "restore",
+      "snapshot",
+      "恢复",
+      "续上",
+      "上次诊断"
+    ],
+    "path": "skills/productivity/dbs-restore",
+    "examples": []
+  },
+  {
+    "id": "dbs-save",
+    "title": "Dbs Save",
+    "title_zh": "诊断状态存档",
+    "status": "active",
+    "category": [
+      "productivity"
+    ],
+    "keywords": [
+      "save",
+      "snapshot",
+      "存档",
+      "保存",
+      "记住"
+    ],
+    "path": "skills/productivity/dbs-save",
+    "examples": []
+  },
+  {
+    "id": "dbs-slowisfast",
+    "title": "Dbs Slowisfast",
+    "title_zh": "慢就是快诊断",
+    "status": "active",
+    "category": [
+      "business"
+    ],
+    "keywords": [
+      "slow is fast",
+      "friction",
+      "assets",
+      "慢就是快",
+      "摩擦",
+      "资产"
+    ],
+    "path": "skills/business/dbs-slowisfast",
+    "examples": []
+  },
+  {
+    "id": "dbs-xhs-title",
+    "title": "Dbs Xhs Title",
+    "title_zh": "小红书标题公式",
+    "status": "active",
+    "category": [
+      "writing"
+    ],
+    "keywords": [
+      "小红书",
+      "标题",
+      "爆款公式",
+      "XHS",
+      "title formula"
+    ],
+    "path": "skills/writing/dbs-xhs-title",
+    "examples": []
+  },
+  {
+    "id": "find-skills",
+    "title": "Find Skills",
+    "title_zh": "技能发现",
+    "status": "active",
+    "category": [
+      "development"
+    ],
+    "keywords": [
+      "skill discovery",
+      "install",
+      "技能发现",
+      "安装",
+      "扩展"
+    ],
+    "path": "skills/development/find-skills",
+    "examples": []
+  },
+  {
+    "id": "last30days",
+    "title": "Last30Days",
+    "title_zh": "30天舆情研究",
+    "status": "active",
+    "category": [
+      "productivity"
+    ],
+    "keywords": [
+      "research",
+      "social media",
+      "舆情",
+      "社交媒体",
+      "Reddit",
+      "X"
+    ],
+    "path": "skills/productivity/last30days",
+    "examples": []
+  },
+  {
+    "id": "longform-narrative-writer",
+    "title": "Longform Narrative Writer",
+    "title_zh": "长文叙事写作",
+    "status": "active",
+    "category": [
+      "writing"
+    ],
+    "keywords": [
+      "长文",
+      "叙事",
+      "第一人称",
+      "复盘",
+      "置身钉内",
+      "narrative"
+    ],
+    "path": "skills/writing/longform-narrative-writer",
     "examples": []
   },
   {
     "id": "obsidian-setup",
-    "title": "Obsidian Setup — MCP + Git Sync",
-    "title_zh": "Obsidian 配置：MCP 接入 + Git 同步",
+    "title": "Obsidian Setup",
+    "title_zh": "Obsidian 配置指南",
     "status": "active",
-    "category": ["productivity", "obsidian", "tooling"],
-    "keywords": ["obsidian", "mcp", "mcpvault", "git sync", "obsidian-git"],
+    "category": [
+      "productivity"
+    ],
+    "keywords": [
+      "Obsidian",
+      "MCP",
+      "GitHub sync",
+      "配置",
+      "同步"
+    ],
     "path": "skills/productivity/obsidian-setup",
     "examples": []
   },
   {
-    "id": "obsidian-write",
-    "title": "Obsidian Research & Write Pipeline",
-    "title_zh": "Obsidian 调研写作管线",
+    "id": "obsidian-toread",
+    "title": "Obsidian Toread",
+    "title_zh": "Obsidian 待读管理",
     "status": "active",
-    "category": ["productivity", "obsidian", "research", "writing"],
+    "category": [
+      "productivity"
+    ],
     "keywords": [
-      "obsidian",
+      "Obsidian",
+      "reading list",
+      "to-read",
+      "待读",
+      "阅读清单"
+    ],
+    "path": "skills/productivity/obsidian-toread",
+    "examples": []
+  },
+  {
+    "id": "obsidian-write",
+    "title": "Obsidian Write",
+    "title_zh": "Obsidian 调研写作",
+    "status": "active",
+    "category": [
+      "productivity"
+    ],
+    "keywords": [
+      "Obsidian",
       "research",
-      "web search",
-      "markdown report",
-      "git commit"
+      "writing",
+      "调研",
+      "写作",
+      "搜索"
     ],
     "path": "skills/productivity/obsidian-write",
     "examples": []
   },
   {
-    "id": "bemoskill-generator",
-    "title": "BemoSkill Generator",
-    "title_zh": "BemoSkill 生成器",
+    "id": "receiving-code-review",
+    "title": "Receiving Code Review",
+    "title_zh": "代码评审响应",
     "status": "active",
-    "category": ["productivity", "meta"],
-    "keywords": ["bemoskill", "skill generator", "meta.yaml", "catalog"],
-    "path": "skills/productivity/bemoskill-generator",
+    "category": [
+      "development"
+    ],
+    "keywords": [
+      "code review",
+      "feedback",
+      "代码评审",
+      "反馈响应"
+    ],
+    "path": "skills/development/receiving-code-review",
     "examples": []
   }
 ]

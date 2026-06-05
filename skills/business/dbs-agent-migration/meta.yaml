@@ -1,17 +1,17 @@
-id: obsidian-setup
-title: Obsidian Setup
-title_zh: Obsidian 配置指南
+id: dbs-agent-migration
+title: Dbs Agent Migration
+title_zh: Agent 工作台迁移
 status: active
 category:
-- productivity
+- business
 formats:
 - markdown
 language:
 - zh-CN
 - en
 best_for:
-- 配置 Obsidian MCP
-- Obsidian GitHub 同步
-- Obsidian 免费同步
+- 迁移到 Claude Code
+- 迁移到 Codex
+- 统一 AGENTS.md
 source: distilled from real workflow with Claude Code
 collected_on: '2026-06-05'

@@ -1,17 +1,17 @@
-id: obsidian-setup
-title: Obsidian Setup
-title_zh: Obsidian 配置指南
+id: dbs-hook
+title: Dbs Hook
+title_zh: 短视频开头优化
 status: active
 category:
-- productivity
+- writing
 formats:
 - markdown
 language:
 - zh-CN
 - en
 best_for:
-- 配置 Obsidian MCP
-- Obsidian GitHub 同步
-- Obsidian 免费同步
+- 短视频开头优化
+- 提升完播率
+- hook 诊断
 source: distilled from real workflow with Claude Code
 collected_on: '2026-06-05'
