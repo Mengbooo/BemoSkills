@@ -61,7 +61,7 @@
    - 是验证记录
    - 还是三者混合
 3. 抽出一级章节，作为左侧目录来源。目录通常对应 Markdown 的 `##`。
-4. 用 [assets/report-template.html](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/structured-report-md-to-html/assets/report-template.html) 作为骨架。
+4. 用 [assets/report-template.html](skills/writing/structured-report-md-to-html/assets/report-template.html) 作为骨架。
 5. 需要决定哪些内容应从普通段落“升级”为语义块：
    - 总结类结论 → `callout`
    - 风险 / 限制 / 待确认 → `callout-warn`
@@ -93,7 +93,7 @@
 - 保持中文章节编号的语气，例如 `一、总体结论`、`二、完成时间线`。
 - 目录锚点保持稳定，可按 `sec-1`、`sec-2` 递增。
 
-更细的组件映射见 [references/component-map.md](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/structured-report-md-to-html/references/component-map.md)。
+更细的组件映射见 [references/component-map.md](skills/writing/structured-report-md-to-html/references/component-map.md)。
 
 ## 禁忌
 

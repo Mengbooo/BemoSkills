@@ -28,13 +28,13 @@
 ## 仓库内入口
 
 - 规则说明：
-  [skill.md](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/structured-report-md-to-html/skill.md)
+  [skill.md](skills/writing/structured-report-md-to-html/skill.md)
 - 组件映射：
-  [component-map.md](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/structured-report-md-to-html/references/component-map.md)
+  [component-map.md](skills/writing/structured-report-md-to-html/references/component-map.md)
 - HTML 骨架：
-  [report-template.html](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/structured-report-md-to-html/assets/report-template.html)
+  [report-template.html](skills/writing/structured-report-md-to-html/assets/report-template.html)
 - 真实示例：
-  [index.html](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/structured-report-md-to-html/examples/embodio-platform-docker-progress-report/index.html)
+  [index.html](skills/writing/structured-report-md-to-html/examples/embodio-platform-docker-progress-report/index.html)
 
 ## 推荐场景
 

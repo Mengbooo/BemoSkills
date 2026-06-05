@@ -67,5 +67,5 @@
 
 ## 当前示例
 
-- [杨贵妃与荔枝](/Users/qiumengbo.123/Desktop/BemoSkills/skills/visual-storytelling/paper-breath-editorial-slides/examples/yang-guifei-and-lychee/index.html)
+- [杨贵妃与荔枝](skills/visual-storytelling/paper-breath-editorial-slides/examples/yang-guifei-and-lychee/index.html)
 

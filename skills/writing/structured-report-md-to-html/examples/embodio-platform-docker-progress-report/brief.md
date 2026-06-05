@@ -20,4 +20,4 @@
 仓库里没有把原始业务报告整份重复存一份，避免形成双份事实源。这里保留来源链接，同时提供一个缩略版 HTML 示例作为可复用参照：
 
 - 示例 HTML：
-  [index.html](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/structured-report-md-to-html/examples/embodio-platform-docker-progress-report/index.html)
+  [index.html](skills/writing/structured-report-md-to-html/examples/embodio-platform-docker-progress-report/index.html)

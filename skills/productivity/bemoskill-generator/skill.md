@@ -142,7 +142,7 @@ Add under the appropriate category section:
 - 状态：active
 - 适用：场景一、场景二
 - 关键词：kw1、kw2、kw3
-- 目录：[skills/category/skill-id](/Users/qiumengbo.123/Desktop/BemoSkills/skills/category/skill-id)
+- 目录：[skills/category/skill-id](skills/category/skill-id)
 ```
 
 ## Workflow

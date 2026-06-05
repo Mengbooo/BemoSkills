@@ -18,4 +18,4 @@
 仓库里保留一个缩略版 HTML 示例，作为复用参照：
 
 - 示例 HTML：
-  [index.html](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/notion-style-design-spec-md-to-html/examples/v0-2-task-collection-design/index.html)
+  [index.html](skills/writing/notion-style-design-spec-md-to-html/examples/v0-2-task-collection-design/index.html)

@@ -29,13 +29,13 @@
 ## 仓库内入口
 
 - 规则说明：
-  [skill.md](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/notion-style-design-spec-md-to-html/skill.md)
+  [skill.md](skills/writing/notion-style-design-spec-md-to-html/skill.md)
 - 组件映射：
-  [component-map.md](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/notion-style-design-spec-md-to-html/references/component-map.md)
+  [component-map.md](skills/writing/notion-style-design-spec-md-to-html/references/component-map.md)
 - HTML 骨架：
-  [design-spec-template.html](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/notion-style-design-spec-md-to-html/assets/design-spec-template.html)
+  [design-spec-template.html](skills/writing/notion-style-design-spec-md-to-html/assets/design-spec-template.html)
 - 真实示例：
-  [index.html](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/notion-style-design-spec-md-to-html/examples/v0-2-task-collection-design/index.html)
+  [index.html](skills/writing/notion-style-design-spec-md-to-html/examples/v0-2-task-collection-design/index.html)
 
 ## 推荐场景
 

@@ -105,16 +105,16 @@ skills/
 
 ## 使用方式
 
-- 浏览 skill 索引：查看 [catalog/skills.md](/Users/qiumengbo.123/Desktop/BemoSkills/catalog/skills.md)
-- 查看报告 HTML 模板：[report-template.html](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/structured-report-md-to-html/assets/report-template.html)
-- 查看设计规格 HTML 模板：[design-spec-template.html](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/notion-style-design-spec-md-to-html/assets/design-spec-template.html)
-- 打开示例课件：查看 [index.html](/Users/qiumengbo.123/Desktop/BemoSkills/skills/visual-storytelling/paper-breath-editorial-slides/examples/yang-guifei-and-lychee/index.html)
-- 打开报告示例：查看 [index.html](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/structured-report-md-to-html/examples/embodio-platform-docker-progress-report/index.html)
-- 打开设计规格示例：查看 [index.html](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/notion-style-design-spec-md-to-html/examples/v0-2-task-collection-design/index.html)
+- 浏览 skill 索引：查看 [catalog/skills.md](catalog/skills.md)
+- 查看报告 HTML 模板：[report-template.html](skills/writing/structured-report-md-to-html/assets/report-template.html)
+- 查看设计规格 HTML 模板：[design-spec-template.html](skills/writing/notion-style-design-spec-md-to-html/assets/design-spec-template.html)
+- 打开示例课件：查看 [index.html](skills/visual-storytelling/paper-breath-editorial-slides/examples/yang-guifei-and-lychee/index.html)
+- 打开报告示例：查看 [index.html](skills/writing/structured-report-md-to-html/examples/embodio-platform-docker-progress-report/index.html)
+- 打开设计规格示例：查看 [index.html](skills/writing/notion-style-design-spec-md-to-html/examples/v0-2-task-collection-design/index.html)
 
 ## 第一个归档示例
 
 - Skill：`paper-breath-editorial-slides`
 - 示例主题：`杨贵妃与荔枝`
 - 示例页数：12 页
-- 入口文件：[skills/visual-storytelling/paper-breath-editorial-slides/examples/yang-guifei-and-lychee/index.html](/Users/qiumengbo.123/Desktop/BemoSkills/skills/visual-storytelling/paper-breath-editorial-slides/examples/yang-guifei-and-lychee/index.html)
+- 入口文件：[skills/visual-storytelling/paper-breath-editorial-slides/examples/yang-guifei-and-lychee/index.html](skills/visual-storytelling/paper-breath-editorial-slides/examples/yang-guifei-and-lychee/index.html)

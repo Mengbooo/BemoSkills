@@ -57,7 +57,7 @@ Notion 风设计规格 Markdown 转 HTML
 1. 先完整阅读 Markdown，识别主章节和子章节。
 2. 判断这份文档是否属于“规格说明体裁”，而不是“报告体裁”。
 3. 一级目录通常来自核心章节，二级目录通常来自关键子模块或子功能。
-4. 用 [assets/design-spec-template.html](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/notion-style-design-spec-md-to-html/assets/design-spec-template.html) 作为骨架。
+4. 用 [assets/design-spec-template.html](skills/writing/notion-style-design-spec-md-to-html/assets/design-spec-template.html) 作为骨架。
 5. 需要把内容映射到更明确的组件：
    - 文档头信息 → `header + meta-grid`
    - 范围边界 / 模块树 → `tree`
@@ -91,7 +91,7 @@ Notion 风设计规格 Markdown 转 HTML
 - 如果文档结尾有实施顺序、推进顺序、分阶段实施建议，优先转成 steps。
 - 如果有很多 `2.1 / 2.2 / 3.1 / 3.2` 子节，目录中应显式保留二级项。
 
-更细的组件映射见 [references/component-map.md](/Users/qiumengbo.123/Desktop/BemoSkills/skills/writing/notion-style-design-spec-md-to-html/references/component-map.md)。
+更细的组件映射见 [references/component-map.md](skills/writing/notion-style-design-spec-md-to-html/references/component-map.md)。
 
 ## 禁忌
 
